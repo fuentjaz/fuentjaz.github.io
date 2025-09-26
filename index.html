@@ -1,398 +1,1346 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jazmin Fuentes — People Analytics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazmin Fuentes - People Analytics Specialist</title>
+    <meta name="description" content="People Analytics Specialist combining psychology and data science to transform HR decisions.">
+    <style>
+        :root {
+            /* Elegant Color Palette - Terracota & Neutral Tones */
+            --primary-terracota: #C46A5E;
+            --secondary-terracota: #D89D94;
+            --accent-gold: #D4AF37;
+            --dark-charcoal: #2E2E2E;
+            --light-cream: #F9F5F2;
+            --medium-taupe: #8A7F7A;
+            --success-sage: #8A9A8A;
+            --white: #FFFFFF;
+            --text-primary: #2E2E2E;
+            --text-secondary: #5A5A5A;
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Typography */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-hero: 4rem; /* Tamaño especial para hero */
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(196, 106, 94, 0.1);
+            --shadow-md: 0 4px 6px rgba(196, 106, 94, 0.1);
+            --shadow-lg: 0 10px 15px rgba(196, 106, 94, 0.1);
+            --shadow-xl: 0 20px 25px rgba(196, 106, 94, 0.1);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
 
-  <!-- Fuente elegante para headings (Playfair Display) y fuente moderna para cuerpo (Inter) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    /* --------------------------
-       Variables de estilo (fácil personalizar)
-       -------------------------- */
-    :root{
-      --bg: #fff5f0;           /* fondo suave */
-      --card: #ffffff;         /* color tarjeta */
-      --accent: #c86a56;       /* color principal (terracota cálido) */
-      --accent-2: #f3d7cc;     /* color secundario (beige) */
-      --text: #3b2f2f;         /* texto principal */
-      --muted: #7a655f;        /* texto secundario */
-      --radius: 16px;
-      --maxwidth: 1100px;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--white);
+            font-size: var(--font-size-base);
+        }
 
-    /* --------------------------
-       Reset y base
-       -------------------------- */
-    *{box-sizing: border-box;}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
-    a { color: var(--accent); text-decoration:none; }
-    a:hover { text-decoration: underline; }
+        /* Elegant typography for headings */
+        h1, h2, h3, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
 
-    /* --------------------------
-       Layout general
-       -------------------------- */
-    .container{
-      max-width: var(--maxwidth);
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
 
-    /* --------------------------
-       HERO CARD (destacado)
-       -------------------------- */
-    .hero {
-      display:flex;
-      gap: 28px;
-      align-items:center;
-      background: linear-gradient(180deg, var(--card) 0%, #fffaf7 100%);
-      border-radius: calc(var(--radius) + 8px);
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(59,47,47,0.06);
-      overflow: hidden;
-    }
+        /* Enhanced Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(249, 245, 242, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(196, 106, 94, 0.1);
+            transition: all 0.3s ease;
+        }
 
-    /* Hero texto — fuente elegante, tamaño grande */
-    .hero-headline{
-      font-family: 'Playfair Display', serif; /* tipografía distintiva */
-      font-size: clamp(28px, 5.2vw, 48px);    /* grande y responsiva */
-      line-height: 1.02;
-      color: var(--accent);
-      margin: 0 0 10px 0;
-    }
-    .hero-sub{
-      font-size: 1rem;
-      color: var(--muted);
-      margin: 0 0 18px 0;
-    }
-    .hero-cta{
-      display:flex;
-      gap:12px;
-      margin-top:8px;
-    }
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-    }
-    .btn-outline {
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      background: transparent;
-      padding: 8px 14px;
-      border-radius: 12px;
-      font-weight: 600;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+        }
 
-    /* Profile photo */
-    .profile-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid rgba(200,106,86,0.08);
-      flex-shrink: 0;
-      background: linear-gradient(180deg,#fff,#fffaf7);
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--primary-terracota);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
 
-    /* --------------------------
-       Secciones
-       -------------------------- */
-    section {
-      margin-top: 36px;
-      background: transparent;
-    }
-    h2.section-title {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      font-size: 1.4rem;
-      margin: 10px 0 14px 0;
-      display:inline-block;
-      border-bottom: 3px solid var(--accent-2);
-      padding-bottom:6px;
-    }
-    p.lead { color: var(--muted); margin: 0 0 14px 0; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xl);
+        }
 
-    /* Two-column cards */
-    .grid-2 {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 8px 20px rgba(59,47,47,0.04);
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-    /* Tech stack badges */
-    .tech-grid {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .tech {
-      background: var(--accent-2);
-      color: var(--text);
-      padding:8px 12px;
-      border-radius: 999px;
-      font-weight:600;
-      font-size:0.95rem;
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
 
-    /* Projects list */
-    .projects-list { display:grid; gap:14px; }
-    .project-item {
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .project-preview {
-      width:84px;
-      height:64px;
-      background:#eee;
-      border-radius:10px;
-      flex-shrink:0;
-      object-fit:cover;
-    }
-    .project-meta h4 { margin:0; font-size:1rem; color:var(--text); }
-    .project-meta p { margin:6px 0 0 0; color:var(--muted); font-size:0.9rem; }
+        .nav-links a:hover {
+            color: var(--primary-terracota);
+        }
 
-    /* Experience list */
-    .experience-list { display:flex; flex-direction:column; gap:14px; }
-    .exp-item { padding:12px; border-radius:12px; background:var(--card); box-shadow:0 6px 16px rgba(59,47,47,0.03); }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    /* Call to action final */
-    .cta-hero {
-      margin-top:24px;
-      padding:18px;
-      border-radius:14px;
-      background: linear-gradient(90deg, rgba(200,106,86,0.06), rgba(243,215,204,0.06));
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
 
-    /* Footer */
-    footer { margin-top:36px; text-align:center; color:var(--muted); font-size:0.9rem; padding:18px 0; }
+        /* Enhanced Hero Section with larger typography */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-cream) 0%, #FFFFFF 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero { flex-direction:column; align-items:center; text-align:center; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .profile-photo { width:130px; height:130px; }
-      .container { margin: 20px auto; padding: 0 16px; }
-    }
-  </style>
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: rgba(196, 106, 94, 0.03);
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero text with larger, distinctive typography */
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: var(--font-size-hero);
+            font-weight: 700;
+            color: var(--dark-charcoal);
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--primary-terracota), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--primary-terracota);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            color: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-lg);
+            border-left: 4px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-terracota);
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--primary-terracota);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-terracota);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Hero Card */
+        .hero-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            border-top: 4px solid var(--accent-gold);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-md);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--accent-gold);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-contact {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            justify-content: center;
+            padding: var(--space-xs);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item .icon-emoji {
+            font-size: var(--font-size-base);
+            color: var(--primary-terracota);
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .contact-item:hover {
+            background: var(--light-cream);
+            transform: translateX(2px);
+        }
+
+        .contact-link {
+            color: var(--primary-terracota);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary-terracota);
+        }
+
+        /* Enhanced Sections */
+        .section {
+            padding: var(--space-2xl) 0;
+            margin: 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--light-cream);
+        }
+
+        .section-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--dark-charcoal);
+            text-align: center;
+            margin-bottom: var(--space-md);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+              /* Enhanced Cards */
+        .expertise-grid,
+        .tech-categories,
+        .competencias-grid,
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .expertise-card,
+        .tech-category,
+        .competencia-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(196, 106, 94, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before,
+        .tech-category::before,
+        .competencia-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
+        }
+
+        .expertise-card:hover,
+        .tech-category:hover,
+        .competencia-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary-terracota);
+        }
+
+        .expertise-title,
+        .competencia-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-md);
+        }
+
+        .expertise-list,
+        .competencia-list {
+            list-style: none;
+        }
+
+        .expertise-list li,
+        .competencia-list li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            padding-left: var(--space-md);
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .expertise-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-terracota);
+            font-weight: bold;
+        }
+
+        .competencia-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-sage);
+            font-weight: bold;
+        }
+
+        /* Enhanced Tech Tags */
+        .tech-category h3 {
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+
+        .tech-tag {
+            background: var(--light-cream);
+            color: var(--text-secondary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-xl);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .tech-tag:hover {
+            background: var(--primary-terracota);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Enhanced Project Cards */
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(196, 106, 94, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            color: white;
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .project-problem {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .project-content {
+            padding: var(--space-xl);
+        }
+
+        .project-section h4 {
+            color: var(--primary-terracota);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            font-size: var(--font-size-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .project-tech-tag {
+            background: var(--light-cream);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--radius-xl);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+
+        .project-results {
+            background: #f8f9f7;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--success-sage);
+            margin: var(--space-md) 0;
+        }
+
+        .project-link {
+            color: var(--primary-terracota);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .project-link:hover {
+            color: var(--secondary-terracota);
+        }
+
+        /* Enhanced Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-terracota), var(--accent-gold));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            padding-right: var(--space-xl);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: var(--space-xl);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: var(--space-xl);
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            border: 4px solid white;
+            transform: translateX(-50%);
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+        }
+
+        .timeline-date {
+            color: var(--primary-terracota);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-xs);
+            background: rgba(196, 106, 94, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-xl);
+            display: inline-block;
+        }
+
+        .timeline-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-company {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-style: italic;
+        }
+
+        .timeline-achievements {
+            list-style: none;
+        }
+
+        .timeline-achievements li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            padding-left: var(--space-md);
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .timeline-achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-sage);
+            font-weight: bold;
+            background: rgba(138, 154, 138, 0.1);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            padding: var(--space-2xl) 0;
+            background: var(--light-cream);
+        }
+
+        .experience-intro {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .experience-highlight {
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-advantages h4 {
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .advantage-item .icon {
+            color: var(--success-sage);
+            font-weight: bold;
+            font-size: var(--font-size-lg);
+        }
+
+        /* Enhanced Contact Section */
+        .contact {
+            padding: var(--space-2xl) 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            max-width: 800px;
+            margin: var(--space-xl) auto 0;
+        }
+
+        .contact-method {
+            background: var(--light-cream);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-terracota);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-method .contact-icon {
+            font-size: var(--font-size-2xl);
+            color: var(--primary-terracota);
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .contact-method h3 {
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+
+        .contact-method a {
+            color: var(--primary-terracota);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--secondary-terracota);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--space-lg);
+            }
+
+            .hero-text h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: var(--font-size-3xl);
+            }
+
+            .expertise-grid,
+            .tech-categories,
+            .competencias-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item .timeline-content {
+                margin-left: 40px !important;
+                margin-right: 0 !important;
+                padding-left: var(--space-md) !important;
+                padding-right: var(--space-md) !important;
+                text-align: left !important;
+            }
+
+            .timeline-item::before {
+                left: 20px !important;
+                transform: translateX(0) !important;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .experience-highlight {
+                padding: var(--space-lg);
+            }
+        }
+
+        /* Simple animations only */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <!-- ========================
-         HERO CARD
-         ======================== -->
-    <div class="hero">
-      <!-- Profile photo: sustituye ./assets/images/profile.jpg con tu foto (mira instrucciones abajo) -->
-      <img src="assets/images/profile.jpg" alt="Foto de [TU NOMBRE]" class="profile-photo" />
-      <div style="flex:1;min-width:0;">
-        <!-- Cambia el texto de la headline; la fuente y tamaño ya están definidos -->
-        <h1 class="hero-headline">Transformo datos y personas en decisiones estratégicas</h1>
-
-        <!-- Subtítulo breve -->
-        <p class="hero-sub">Soy <strong>Jazmin Fuentes</strong> — Psicóloga &amp; Científica de Datos especializada en People Analytics y Desarrollo Organizacional.</p>
-
-        <div class="hero-cta">
-          <a class="btn" href="#contact">Contactarme</a>
-          <a class="btn-outline" href="#projects">Ver proyectos</a>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Jazmin Fuentes</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#stack">Tech Stack</a></li>
+                    <li><a href="#competencias">Competencias</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <button class="mobile-menu">
+                    <span>☰</span>
+                </button>
+            </nav>
         </div>
+    </header>
 
-        <!-- 
-          COMENTARIO: Reemplaza el contenido anterior con tu propio texto corto si quieres.
-          Ejemplo (comentado):
-          <!-- <p class="hero-sub">Soy [TU NOMBRE] — [TÍTULO CORTO]. Ayudo a equipos de RRHH a reducir rotación usando modelos predictivos y programas de desarrollo.</p> -->
-      </div>
-    </div>
-
-    <!-- ========================
-         WHAT I DO BEST
-         ======================== -->
-    <section id="what-i-do">
-      <h2 class="section-title">What I do best</h2>
-      <p class="lead">Breve resumen de lo que resuelves para las empresas (1 línea).</p>
-
-      <div class="grid-2" style="margin-top:12px;">
-        <div class="card">
-          <h3 style="margin-top:0;">People Analytics</h3>
-          <p style="color:var(--muted); margin:8px 0 0 0;">
-            <!-- TODO: Escribe un enunciado corto que describa qué problema resuelves y el beneficio (ej. reducción de rotación, mejora del engagement). -->
-            <!-- EJEMPLO: 'Anticipo señales de rotación y propongo intervenciones para retener talento crítico.' -->
-          </p>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transformo Datos en Decisiones Estratégicas de Talento</h1>
+                    <div class="hero-subtitle">Psicología + Ciencia de Datos = People Analytics con Impacto</div>
+                    <div class="hero-description">
+                        Combino mi formación en psicología organizacional con expertise en ciencia de datos para crear soluciones de People Analytics que realmente transforman la gestión del talento.
+                        <br><br>
+                        No solo analizo datos de RH - entiendo el contexto humano detrás de los números y diseño intervenciones medibles que mejoran retención, engagement y desempeño.
+                    </div>
+                    <div class="hero-highlight">
+                        <strong>Mi valor diferencial:</strong> Traduzco insights de datos en acciones concretas de desarrollo organizacional porque entiendo tanto la tecnología como las personas.
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn-primary">
+                            Ver Proyectos
+                        </a>
+                        <a href="./miCV.pdf" class="btn-secondary" download>
+                            Descargar CV
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            Contactarme
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="profile-image">
+                        <!-- REEMPLAZA CON TU FOTO: Coloca tu imagen en assets/images/profile.jpg -->
+                        <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes - People Analytics Specialist">
+                    </div>
+                    <h3>Especialista en People Analytics</h3>
+                    <div class="profile-contact">
+                        <div class="contact-item">
+                            <div class="icon-emoji">✉️</div>
+                            <!-- REEMPLAZA CON TU EMAIL -->
+                            <a href="mailto:tu.email@ejemplo.com" class="contact-link">tu.email@ejemplo.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-emoji">📱</div>
+                            <!-- REEMPLAZA CON TU TELÉFONO -->
+                            <a href="tel:+521234567890" class="contact-link">+52 123 456 7890</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-emoji">💼</div>
+                            <!-- REEMPLAZA CON TU LINKEDIN -->
+                            <a href="https://www.linkedin.com/in/tu-perfil" class="contact-link">LinkedIn</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-emoji">💻</div>
+                            <!-- REEMPLAZA CON TU GITHUB -->
+                            <a href="https://github.com/tu-usuario" class="contact-link">GitHub</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-emoji">🌐</div>
+                            <!-- REEMPLAZA CON TUS IDIOMAS -->
+                            <span>Español nativo | Inglés avanzado</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-emoji">📍</div>
+                            <!-- REEMPLAZA CON TU UBICACIÓN -->
+                            <span>Ciudad, País</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="card">
-          <h3 style="margin-top:0;">HR Development</h3>
-          <p style="color:var(--muted); margin:8px 0 0 0;">
-            <!-- TODO: Agrega aquí una frase sobre diseño de programas de formación y medición de impacto. -->
-            <!-- EJEMPLO: 'Diseño programas formativos medibles que elevan desempeño y cultura.' -->
-          </p>
-        </div>
-      </div>
     </section>
 
-    <!-- ========================
-         TECHNOLOGY STACK
-         ======================== -->
-    <section id="tech-stack">
-      <h2 class="section-title">Technology Stack</h2>
-      <div class="card">
-        <div class="tech-grid">
-          <!-- Sustituye o agrega badges/tecnologías aquí -->
-          <span class="tech">Python</span>
-          <span class="tech">SQL</span>
-          <span class="tech">Power BI</span>
-          <span class="tech">Streamlit</span>
-          <span class="tech">scikit-learn</span>
+    <section id="expertise" class="section">
+        <div class="container">
+            <h2 class="section-title">What I Do Best</h2>
+            <p class="section-subtitle">Combinando psicología organizacional con análisis de datos avanzado</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3 class="expertise-title">PEOPLE ANALYTICS & PREDICCIÓN</h3>
+                    <ul class="expertise-list">
+                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
+                        <li>Predicción de rotación y análisis de retención</li>
+                        <li>Modelos de clasificación para engagement</li>
+                        <li>Análisis de clima organizacional</li>
+                        <li>Segmentación de talento con machine learning</li>
+                    </ul>
+                </div>
 
-          <!-- COMENTARIO: Reemplaza las líneas siguientes con tus tecnologías reales -->
-          <!-- <span class="tech">TuTecnología1</span> -->
-          <!-- <span class="tech">TuTecnología2</span> -->
+                <div class="expertise-card">
+                    <h3 class="expertise-title">DESARROLLO ORGANIZACIONAL</h3>
+                    <ul class="expertise-list">
+                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
+                        <li>Diseño y evaluación de programas de formación</li>
+                        <li>Análisis de impacto de iniciativas de RH</li>
+                        <li>Medición de cultura organizacional</li>
+                        <li>Gestión del cambio basada en datos</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="expertise-title">ANÁLISIS DE DATOS AVANZADO</h3>
+                    <ul class="expertise-list">
+                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
+                        <li>Python para análisis de datos de RH</li>
+                        <li>SQL para consultas de bases de datos</li>
+                        <li>Visualización con Power BI/Tableau</li>
+                        <li>Estadística aplicada a recursos humanos</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="expertise-title">GESTIÓN ESTRATÉGICA DE RH</h3>
+                    <ul class="expertise-list">
+                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
+                        <li>Alineación de RH con objetivos de negocio</li>
+                        <li>Dashboard ejecutivos para toma de decisiones</li>
+                        <li>ROI de iniciativas de capital humano</li>
+                        <li>Comunicación de insights a stakeholders</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- ========================
-         CORE COMPETENCIES
-         ======================== -->
-    <section id="core-competencies">
-      <h2 class="section-title">Core Competencies</h2>
-      <div class="grid-2">
-        <div class="card">
-          <ul style="margin:0; padding-left:18px; color:var(--muted);">
-            <!-- COMENTARIO: Rellena con competencias clave -->
-            <!-- <li>Data storytelling</li> -->
-            <!-- <li>Analítica predictiva</li> -->
-            <!-- <li>Evaluación de programas de formación</li> -->
-          </ul>
-        </div>
+    <section id="stack" class="section">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-subtitle">Herramientas y tecnologías que domino para crear soluciones de People Analytics</p>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>CIENCIA DE DATOS & ML</h3>
+                    <div class="tech-tags">
+                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Jupyter</span>
+                    </div>
+                </div>
 
-        <div class="card">
-          <ul style="margin:0; padding-left:18px; color:var(--muted);">
-            <!-- <li>Cultura organizacional</li> -->
-            <!-- <li>Diseño instruccional</li> -->
-            <!-- <li>Evaluación cualitativa</li> -->
-          </ul>
+                <div class="tech-category">
+                    <h3>ANÁLISIS & VISUALIZACIÓN</h3>
+                    <div class="tech-tags">
+                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>HERRAMIENTAS DE RH</h3>
+                    <div class="tech-tags">
+                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                        <span class="tech-tag">Sistemas HRIS</span>
+                        <span class="tech-tag">Survey Tools</span>
+                        <span class="tech-tag">ATS</span>
+                        <span class="tech-tag">LMS</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>ESTADÍSTICA & MÉTRICAS</h3>
+                    <div class="tech-tags">
+                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                        <span class="tech-tag">Análisis Estadístico</span>
+                        <span class="tech-tag">Métricas de RH</span>
+                        <span class="tech-tag">People Analytics</span>
+                        <span class="tech-tag">Dashboarding</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- ========================
-         FEATURED TECHNICAL PROJECTS
-         ======================== -->
-    <section id="projects">
-      <h2 class="section-title">Featured technical projects</h2>
+    <section id="competencias" class="section">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Habilidades técnicas y de negocio que permiten soluciones integrales</p>
+            
+            <div class="competencias-grid">
+                <div class="competencia-card">
+                    <h3 class="competencia-title">HABILIDADES TÉCNICAS</h3>
+                    <ul class="competencia-list">
+                        <!-- REEMPLAZA CON TUS COMPETENCIAS -->
+                        <li>Análisis predictivo aplicado a recursos humanos</li>
+                        <li>Desarrollo de dashboards ejecutivos</li>
+                        <li>Gestión de proyectos de People Analytics</li>
+                        <li>Automatización de reportes de RH</li>
+                        <li>Análisis de encuestas y feedback</li>
+                        <li>Storytelling con datos para RH</li>
+                    </ul>
+                </div>
 
-      <div class="projects-list">
-        <div class="project-item">
-          <img class="project-preview" src="assets/images/project1.png" alt="Preview proyecto 1" />
-          <div class="project-meta">
-            <h4>Predicción de rotación de empleados</h4>
-            <p><!-- TODO: describe en 1 línea el impacto y las tecnologías usadas. Ej: 'Modelo ML con scikit-learn que identificó factores de rotación.' --></p>
-            <!-- COMENTARIO: Reemplaza el enlace con tu repo / demo -->
-            <!-- <a href="https://github.com/fuentjaz/Project-9-classification-model.git" target="_blank">Ver en GitHub</a> -->
-          </div>
+                <div class="competencia-card">
+                    <h3 class="competencia-title">COMPETENCIAS DE NEGOCIO</h3>
+                    <ul class="competencia-list">
+                        <!-- REEMPLAZA CON TUS COMPETENCIAS -->
+                        <li>Traducción de necesidades de negocio a soluciones técnicas</li>
+                        <li>Comunicación efectiva con stakeholders de RH</li>
+                        <li>Gestión del cambio organizacional</li>
+                        <li>Medición de ROI en iniciativas de capital humano</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div class="project-item">
-          <img class="project-preview" src="assets/images/project2.png" alt="Preview proyecto 2" />
-          <div class="project-meta">
-            <h4>Dashboard interactivo</h4>
-            <p><!-- TODO: añade una línea con tech stack y aporte al negocio. --></p>
-            <!-- <a href="#">Ver demo</a> -->
-          </div>
-        </div>
-
-        <!-- COMENTARIO: Duplica / elimina project-item según necesites. Reemplaza projectX.png por capturas reales -->
-      </div>
     </section>
 
-    <!-- ========================
-         MY VALUE PROPOSITION
-         ======================== -->
-    <section id="value-prop">
-      <h2 class="section-title">My value proposition</h2>
-      <div class="card">
-        <p style="margin:0; color:var(--muted);">
-          <!-- TODO: Escribe aquí tu propuesta de valor en 2-3 líneas. Ejemplo: 'Combino psicología y ciencia de datos para diseñar soluciones que mejoran la retención y el bienestar, con métricas que hablan al negocio.' -->
-        </p>
-      </div>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Technical Projects</h2>
+            <p class="section-subtitle">Soluciones de People Analytics que generan impacto medible en el negocio</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Predicción de Rotación de Empleados</div>
+                        <div class="project-problem">Identificar factores de rotación y proponer intervenciones preventivas</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Solución Técnica</h4>
+                            <div class="project-tech">
+                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                                <span class="project-tech-tag">Machine Learning</span>
+                                <span class="project-tech-tag">Python</span>
+                                <span class="project-tech-tag">Scikit-learn</span>
+                                <span class="project-tech-tag">Pandas</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
+                                <li>Análisis de datos históricos de empleados</li>
+                                <li>Modelos de clasificación para predicción</li>
+                                <li>Identificación de factores clave de rotación</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Modelo con 85% de precisión, identificación de 5 factores críticos de rotación
+                        </div>
+                        <!-- REEMPLAZA CON TU LINK -->
+                        <a href="https://github.com/tu-usuario/proyecto-rotacion" class="project-link">
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Dashboard de People Analytics</div>
+                        <div class="project-problem">Visualización integral de métricas de RH para toma de decisiones</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Solución Técnica</h4>
+                            <div class="project-tech">
+                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                                <span class="project-tech-tag">Power BI</span>
+                                <span class="project-tech-tag">SQL</span>
+                                <span class="project-tech-tag">DAX</span>
+                                <span class="project-tech-tag">ETL</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
+                                <li>Integración de múltiples fuentes de datos</li>
+                                <li>Automatización de reportes mensuales</li>
+                                <li>Métricas clave de gestión de talento</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Reducción de 70% en tiempo de reporting, mejor toma de decisiones
+                        </div>
+                        <!-- REEMPLAZA CON TU LINK -->
+                        <a href="https://github.com/tu-usuario/dashboard-rh" class="project-link">
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Análisis de Engagement</div>
+                        <div class="project-problem">Identificar drivers de engagement y proponer mejoras</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Solución Técnica</h4>
+                            <div class="project-tech">
+                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
+                                <span class="project-tech-tag">Análisis Estadístico</span>
+                                <span class="project-tech-tag">Python</span>
+                                <span class="project-tech-tag">Survey Analysis</span>
+                                <span class="project-tech-tag">Clusterización</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
+                                <li>Análisis de encuestas de clima organizacional</li>
+                                <li>Segmentación de empleados por nivel de engagement</li>
+                                <li>Recomendaciones personalizadas por segmento</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Incremento del 15% en scores de engagement, acciones específicas por departamento
+                        </div>
+                        <!-- REEMPLAZA CON TU LINK -->
+                        <a href="https://github.com/tu-usuario/analisis-engagement" class="project-link">
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ========================
-         PROFESSIONAL EXPERIENCE
-         ======================== -->
-    <section id="experience">
-      <h2 class="section-title">Professional experience</h2>
-
-      <div class="experience-list">
-        <div class="exp-item">
-          <strong>Analista de Datos Psicosociales — CAI Mujeres</strong>
-          <p style="margin:6px 0 0 0; color:var(--muted);">
-            <!-- TODO: Resume 1-2 líneas con logros cuantificables: 'Recolecté y estructuré datos de 300+ estudiantes y presenté dashboards que influyeron en la toma de decisiones.' -->
-          </p>
+    <section class="value-prop">
+        <div class="container">
+            <h2 class="section-title">My Value Proposition</h2>
+            <p class="section-subtitle">¿Por qué elegir una especialista en People Analytics con formación en psicología?</p>
+            
+            <div class="experience-intro">
+                <div class="experience-highlight">
+                    <strong>COMBINACIÓN ÚNICA DE HABILIDADES</strong>
+                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
+                        Psicología Organizacional + Ciencia de Datos = Soluciones Integrales
+                    </div>
+                </div>
+                
+                <div class="experience-advantages">
+                    <h4>Esta combinación única es mi ventaja competitiva en People Analytics:</h4>
+                    <div class="advantages-grid">
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>Entiendo tanto los datos como el comportamiento humano detrás de ellos</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>Diseño intervenciones que son técnicamente sólidas y humanamente efectivas</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>Comunico insights técnicos en lenguaje que RH y negocio entienden</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>Traduzco hallazgos analíticos en acciones concretas de desarrollo organizacional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="exp-item">
-          <strong>Data Scientist — TripleTen LatAm</strong>
-          <p style="margin:6px 0 0 0; color:var(--muted);">
-            <!-- TODO: agrega resumen y resultados clave aquí -->
-          </p>
-        </div>
-
-        <!-- COMENTARIO: Añade más roles si lo deseas -->
-      </div>
     </section>
 
-    <!-- ========================
-         READY TO TRANSFORM DATA INTO IMPACT (CTA)
-         ======================== -->
-    <section id="cta">
-      <div class="cta-hero">
-        <div>
-          <h3 style="margin:0;">Ready to transform data into impact?</h3>
-          <p style="margin:6px 0 0 0; color:var(--muted);"> <!-- TODO: coloca una frase de cierre y llamado a la acción --> </p>
-        </div>
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Presente</div>
+                        <div class="timeline-title">Especialista en People Analytics</div>
+                        <div class="timeline-company">Tu Empresa Actual</div>
+                        <p class="timeline-description">Breve descripción de tu rol actual</p>
+                        <ul class="timeline-achievements">
+                            <!-- REEMPLAZA CON TUS LOGROS -->
+                            <li>Logro 1 cuantificable</li>
+                            <li>Logro 2 con impacto medible</li>
+                            <li>Logro 3 relevante</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div style="display:flex; gap:10px;">
-          <a class="btn" href="mailto:tuemail@example.com">Let's talk</a>
-          <a class="btn-outline" href="miCV.pdf" download>Download CV</a>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <div class="timeline-title">Analista de Datos de RH</div>
+                        <div class="timeline-company">Empresa Anterior</div>
+                        <ul class="timeline-achievements">
+                            <!-- REEMPLAZA CON TUS LOGROS -->
+                            <li>Implementación de sistema de People Analytics</li>
+                            <li>Automatización de reportes mensuales</li>
+                            <li>Análisis que impactó decisiones estratégicas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-title">Psicóloga Organizacional</div>
+                        <div class="timeline-company">Otra Empresa Relevante</div>
+                        <ul class="timeline-achievements">
+                            <!-- REEMPLAZA CON TUS LOGROS -->
+                            <li>Diseño de programas de desarrollo</li>
+                            <li>Evaluación de clima organizacional</li>
+                            <li>Gestión de talento clave</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2020</div>
+                        <div class="timeline-title">Licenciatura en Psicología</div>
+                        <div class="timeline-company">Tu Universidad</div>
+                        <p class="timeline-description">Formación base en psicología organizacional</p>
+                        <ul class="timeline-achievements">
+                            <!-- REEMPLAZA CON TUS LOGROS ACADÉMICOS -->
+                            <li>Especialización en psicología organizacional</li>
+                            <li>Certificaciones relevantes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <footer>
-      © 2025 <!-- Reemplaza con tu nombre: --> Jazmin Fuentes — Hecho con 💛 y datos
-    </footer>
-  </div>
-
-  <!-- ========================
-       NOTAS:
-       - Reemplaza las imágenes en /assets/images/
-       - Ajusta nombres, enlaces y textos donde hay comentarios <!-- TODO: ... -->
-       - No necesitas JS para que esto funcione; es simple HTML/CSS
-       ======================== -->
-</body>
-</html>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">¿Lista para transformar datos en impacto?</h2>
+            <p class="section-subtitle">Conectemos para discutir cómo puedo ayudar a tu organización a transformar datos de RH en ventajas competitivas</p>
+            
+            <div class="contact-grid">
+                <div class="contact-method
