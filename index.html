@@ -1,128 +1,398 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jazmin Fuentes | People Analytics</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jazmin Fuentes — People Analytics</title>
+
+  <!-- Fuente elegante para headings (Playfair Display) y fuente moderna para cuerpo (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ---- Estilos base ---- */
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fffaf5;
-      color: #3b2f2f;
-      line-height: 1.6;
+    /* --------------------------
+       Variables de estilo (fácil personalizar)
+       -------------------------- */
+    :root{
+      --bg: #fff5f0;           /* fondo suave */
+      --card: #ffffff;         /* color tarjeta */
+      --accent: #c86a56;       /* color principal (terracota cálido) */
+      --accent-2: #f3d7cc;     /* color secundario (beige) */
+      --text: #3b2f2f;         /* texto principal */
+      --muted: #7a655f;        /* texto secundario */
+      --radius: 16px;
+      --maxwidth: 1100px;
     }
-    header {
-      background: #d17c5f;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+
+    /* --------------------------
+       Reset y base
+       -------------------------- */
+    *{box-sizing: border-box;}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-    section {
-      max-width: 800px;
-      margin: 60px auto;
+    a { color: var(--accent); text-decoration:none; }
+    a:hover { text-decoration: underline; }
+
+    /* --------------------------
+       Layout general
+       -------------------------- */
+    .container{
+      max-width: var(--maxwidth);
+      margin: 40px auto;
       padding: 0 20px;
     }
-    h2 {
-      color: #d17c5f;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #f0c9b6;
-      display: inline-block;
-      padding-bottom: 5px;
+
+    /* --------------------------
+       HERO CARD (destacado)
+       -------------------------- */
+    .hero {
+      display:flex;
+      gap: 28px;
+      align-items:center;
+      background: linear-gradient(180deg, var(--card) 0%, #fffaf7 100%);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(59,47,47,0.06);
+      overflow: hidden;
     }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+
+    /* Hero texto — fuente elegante, tamaño grande */
+    .hero-headline{
+      font-family: 'Playfair Display', serif; /* tipografía distintiva */
+      font-size: clamp(28px, 5.2vw, 48px);    /* grande y responsiva */
+      line-height: 1.02;
+      color: var(--accent);
+      margin: 0 0 10px 0;
     }
-    .skill {
-      background: #fbe4d8;
+    .hero-sub{
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 18px 0;
+    }
+    .hero-cta{
+      display:flex;
+      gap:12px;
+      margin-top:8px;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
       padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.9em;
+      border-radius: 12px;
+      font-weight: 600;
     }
-    footer {
-      text-align: center;
-      background: #fbe4d8;
-      padding: 20px;
-      margin-top: 60px;
-      font-size: 0.9em;
+
+    /* Profile photo */
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid rgba(200,106,86,0.08);
+      flex-shrink: 0;
+      background: linear-gradient(180deg,#fff,#fffaf7);
     }
-    a {
-      color: #d17c5f;
-      text-decoration: none;
-      font-weight: bold;
+
+    /* --------------------------
+       Secciones
+       -------------------------- */
+    section {
+      margin-top: 36px;
+      background: transparent;
     }
-    a:hover {
-      text-decoration: underline;
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin: 10px 0 14px 0;
+      display:inline-block;
+      border-bottom: 3px solid var(--accent-2);
+      padding-bottom:6px;
+    }
+    p.lead { color: var(--muted); margin: 0 0 14px 0; }
+
+    /* Two-column cards */
+    .grid-2 {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(59,47,47,0.04);
+    }
+
+    /* Tech stack badges */
+    .tech-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .tech {
+      background: var(--accent-2);
+      color: var(--text);
+      padding:8px 12px;
+      border-radius: 999px;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    /* Projects list */
+    .projects-list { display:grid; gap:14px; }
+    .project-item {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .project-preview {
+      width:84px;
+      height:64px;
+      background:#eee;
+      border-radius:10px;
+      flex-shrink:0;
+      object-fit:cover;
+    }
+    .project-meta h4 { margin:0; font-size:1rem; color:var(--text); }
+    .project-meta p { margin:6px 0 0 0; color:var(--muted); font-size:0.9rem; }
+
+    /* Experience list */
+    .experience-list { display:flex; flex-direction:column; gap:14px; }
+    .exp-item { padding:12px; border-radius:12px; background:var(--card); box-shadow:0 6px 16px rgba(59,47,47,0.03); }
+
+    /* Call to action final */
+    .cta-hero {
+      margin-top:24px;
+      padding:18px;
+      border-radius:14px;
+      background: linear-gradient(90deg, rgba(200,106,86,0.06), rgba(243,215,204,0.06));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    /* Footer */
+    footer { margin-top:36px; text-align:center; color:var(--muted); font-size:0.9rem; padding:18px 0; }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero { flex-direction:column; align-items:center; text-align:center; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .profile-photo { width:130px; height:130px; }
+      .container { margin: 20px auto; padding: 0 16px; }
     }
   </style>
 </head>
+
 <body>
-  <!-- Encabezado -->
-  <header>
-    <h1>Jazmin Fuentes</h1>
-    <p>Psicóloga & Científica de Datos | People Analytics</p>
-  </header>
+  <div class="container">
+    <!-- ========================
+         HERO CARD
+         ======================== -->
+    <div class="hero">
+      <!-- Profile photo: sustituye ./assets/images/profile.jpg con tu foto (mira instrucciones abajo) -->
+      <img src="assets/images/profile.jpg" alt="Foto de [TU NOMBRE]" class="profile-photo" />
+      <div style="flex:1;min-width:0;">
+        <!-- Cambia el texto de la headline; la fuente y tamaño ya están definidos -->
+        <h1 class="hero-headline">Transformo datos y personas en decisiones estratégicas</h1>
 
-  <!-- Sobre mí -->
-  <section>
-    <h2>Sobre mí</h2>
-    <p>
-      Soy Psicóloga y Científica de Datos. Me apasiona transformar datos en
-      decisiones que impulsen el crecimiento de las personas y el valor de las
-      organizaciones. Creo en un enfoque humano de la analítica: cálido,
-      inclusivo y enfocado en el impacto real.
-    </p>
-  </section>
+        <!-- Subtítulo breve -->
+        <p class="hero-sub">Soy <strong>Jazmin Fuentes</strong> — Psicóloga &amp; Científica de Datos especializada en People Analytics y Desarrollo Organizacional.</p>
 
-  <!-- Habilidades -->
-  <section>
-    <h2>Habilidades</h2>
-    <div class="skills-list">
-      <div class="skill">People Analytics</div>
-      <div class="skill">Python</div>
-      <div class="skill">Data Visualization</div>
-      <div class="skill">Machine Learning</div>
-      <div class="skill">HR Strategy</div>
-      <div class="skill">Behavior Analysis</div>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Contactarme</a>
+          <a class="btn-outline" href="#projects">Ver proyectos</a>
+        </div>
+
+        <!-- 
+          COMENTARIO: Reemplaza el contenido anterior con tu propio texto corto si quieres.
+          Ejemplo (comentado):
+          <!-- <p class="hero-sub">Soy [TU NOMBRE] — [TÍTULO CORTO]. Ayudo a equipos de RRHH a reducir rotación usando modelos predictivos y programas de desarrollo.</p> -->
+      </div>
     </div>
-  </section>
 
-  <!-- Proyectos -->
-  <section>
-    <h2>Proyectos</h2>
-    <ul>
-      <li><a href="#">📊 Dashboard de Clima Organizacional</a></li>
-      <li><a href="#">🤖 Predicción de rotación de empleados</a></li>
-      <li><a href="#">📈 Análisis de satisfacción laboral</a></li>
-    </ul>
-  </section>
+    <!-- ========================
+         WHAT I DO BEST
+         ======================== -->
+    <section id="what-i-do">
+      <h2 class="section-title">What I do best</h2>
+      <p class="lead">Breve resumen de lo que resuelves para las empresas (1 línea).</p>
 
-  <!-- Contacto -->
-  <section>
-    <h2>Contacto</h2>
-    <p>
-      <a href="mailto:fuentessantiagojazmin@gmail.com">Email</a> |
-      <a href="https://linkedin.com/in/fuentjaz">LinkedIn</a> |
-      <a href="https://github.com/fuentjaz">GitHub</a>
-    </p>
-  </section>
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <h3 style="margin-top:0;">People Analytics</h3>
+          <p style="color:var(--muted); margin:8px 0 0 0;">
+            <!-- TODO: Escribe un enunciado corto que describa qué problema resuelves y el beneficio (ej. reducción de rotación, mejora del engagement). -->
+            <!-- EJEMPLO: 'Anticipo señales de rotación y propongo intervenciones para retener talento crítico.' -->
+          </p>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Jazmin Fuentes — Hecho con 💛 y datos
-  </footer>
+        <div class="card">
+          <h3 style="margin-top:0;">HR Development</h3>
+          <p style="color:var(--muted); margin:8px 0 0 0;">
+            <!-- TODO: Agrega aquí una frase sobre diseño de programas de formación y medición de impacto. -->
+            <!-- EJEMPLO: 'Diseño programas formativos medibles que elevan desempeño y cultura.' -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         TECHNOLOGY STACK
+         ======================== -->
+    <section id="tech-stack">
+      <h2 class="section-title">Technology Stack</h2>
+      <div class="card">
+        <div class="tech-grid">
+          <!-- Sustituye o agrega badges/tecnologías aquí -->
+          <span class="tech">Python</span>
+          <span class="tech">SQL</span>
+          <span class="tech">Power BI</span>
+          <span class="tech">Streamlit</span>
+          <span class="tech">scikit-learn</span>
+
+          <!-- COMENTARIO: Reemplaza las líneas siguientes con tus tecnologías reales -->
+          <!-- <span class="tech">TuTecnología1</span> -->
+          <!-- <span class="tech">TuTecnología2</span> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         CORE COMPETENCIES
+         ======================== -->
+    <section id="core-competencies">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="grid-2">
+        <div class="card">
+          <ul style="margin:0; padding-left:18px; color:var(--muted);">
+            <!-- COMENTARIO: Rellena con competencias clave -->
+            <!-- <li>Data storytelling</li> -->
+            <!-- <li>Analítica predictiva</li> -->
+            <!-- <li>Evaluación de programas de formación</li> -->
+          </ul>
+        </div>
+
+        <div class="card">
+          <ul style="margin:0; padding-left:18px; color:var(--muted);">
+            <!-- <li>Cultura organizacional</li> -->
+            <!-- <li>Diseño instruccional</li> -->
+            <!-- <li>Evaluación cualitativa</li> -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         FEATURED TECHNICAL PROJECTS
+         ======================== -->
+    <section id="projects">
+      <h2 class="section-title">Featured technical projects</h2>
+
+      <div class="projects-list">
+        <div class="project-item">
+          <img class="project-preview" src="assets/images/project1.png" alt="Preview proyecto 1" />
+          <div class="project-meta">
+            <h4>Predicción de rotación de empleados</h4>
+            <p><!-- TODO: describe en 1 línea el impacto y las tecnologías usadas. Ej: 'Modelo ML con scikit-learn que identificó factores de rotación.' --></p>
+            <!-- COMENTARIO: Reemplaza el enlace con tu repo / demo -->
+            <!-- <a href="https://github.com/fuentjaz/Project-9-classification-model.git" target="_blank">Ver en GitHub</a> -->
+          </div>
+        </div>
+
+        <div class="project-item">
+          <img class="project-preview" src="assets/images/project2.png" alt="Preview proyecto 2" />
+          <div class="project-meta">
+            <h4>Dashboard interactivo</h4>
+            <p><!-- TODO: añade una línea con tech stack y aporte al negocio. --></p>
+            <!-- <a href="#">Ver demo</a> -->
+          </div>
+        </div>
+
+        <!-- COMENTARIO: Duplica / elimina project-item según necesites. Reemplaza projectX.png por capturas reales -->
+      </div>
+    </section>
+
+    <!-- ========================
+         MY VALUE PROPOSITION
+         ======================== -->
+    <section id="value-prop">
+      <h2 class="section-title">My value proposition</h2>
+      <div class="card">
+        <p style="margin:0; color:var(--muted);">
+          <!-- TODO: Escribe aquí tu propuesta de valor en 2-3 líneas. Ejemplo: 'Combino psicología y ciencia de datos para diseñar soluciones que mejoran la retención y el bienestar, con métricas que hablan al negocio.' -->
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================
+         PROFESSIONAL EXPERIENCE
+         ======================== -->
+    <section id="experience">
+      <h2 class="section-title">Professional experience</h2>
+
+      <div class="experience-list">
+        <div class="exp-item">
+          <strong>Analista de Datos Psicosociales — CAI Mujeres</strong>
+          <p style="margin:6px 0 0 0; color:var(--muted);">
+            <!-- TODO: Resume 1-2 líneas con logros cuantificables: 'Recolecté y estructuré datos de 300+ estudiantes y presenté dashboards que influyeron en la toma de decisiones.' -->
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <strong>Data Scientist — TripleTen LatAm</strong>
+          <p style="margin:6px 0 0 0; color:var(--muted);">
+            <!-- TODO: agrega resumen y resultados clave aquí -->
+          </p>
+        </div>
+
+        <!-- COMENTARIO: Añade más roles si lo deseas -->
+      </div>
+    </section>
+
+    <!-- ========================
+         READY TO TRANSFORM DATA INTO IMPACT (CTA)
+         ======================== -->
+    <section id="cta">
+      <div class="cta-hero">
+        <div>
+          <h3 style="margin:0;">Ready to transform data into impact?</h3>
+          <p style="margin:6px 0 0 0; color:var(--muted);"> <!-- TODO: coloca una frase de cierre y llamado a la acción --> </p>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <a class="btn" href="mailto:tuemail@example.com">Let's talk</a>
+          <a class="btn-outline" href="miCV.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 <!-- Reemplaza con tu nombre: --> Jazmin Fuentes — Hecho con 💛 y datos
+    </footer>
+  </div>
+
+  <!-- ========================
+       NOTAS:
+       - Reemplaza las imágenes en /assets/images/
+       - Ajusta nombres, enlaces y textos donde hay comentarios <!-- TODO: ... -->
+       - No necesitas JS para que esto funcione; es simple HTML/CSS
+       ======================== -->
 </body>
 </html>
