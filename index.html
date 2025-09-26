@@ -3,32 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jazmin Fuentes</title>
+  <title>Jazmin Fuentes | People Analytics</title>
   <style>
+    /* ---- Estilos base ---- */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background-color: #fffaf5;
-      color: #333;
-      margin: 40px;
+      color: #3b2f2f;
+      line-height: 1.6;
+    }
+    header {
+      background: #d17c5f;
+      color: white;
+      padding: 60px 20px;
       text-align: center;
     }
-    h1 { color: #d17c5f; }
-    p { max-width: 600px; margin: auto; line-height: 1.6; }
-    .section { margin-top: 40px; }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #d17c5f;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #f0c9b6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background: #fbe4d8;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+    footer {
+      text-align: center;
+      background: #fbe4d8;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+    a {
+      color: #d17c5f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Hola, soy Jazmin Fuentes 👋</h1>
-  <p>Soy Psicóloga y Científica de Datos. Me apasiona el People Analytics y el desarrollo organizacional, creando valor humano a través de datos.</p>
+  <!-- Encabezado -->
+  <header>
+    <h1>Jazmin Fuentes</h1>
+    <p>Psicóloga & Científica de Datos | People Analytics</p>
+  </header>
 
-  <div class="section">
+  <!-- Sobre mí -->
+  <section>
+    <h2>Sobre mí</h2>
+    <p>
+      Soy Psicóloga y Científica de Datos. Me apasiona transformar datos en
+      decisiones que impulsen el crecimiento de las personas y el valor de las
+      organizaciones. Creo en un enfoque humano de la analítica: cálido,
+      inclusivo y enfocado en el impacto real.
+    </p>
+  </section>
+
+  <!-- Habilidades -->
+  <section>
+    <h2>Habilidades</h2>
+    <div class="skills-list">
+      <div class="skill">People Analytics</div>
+      <div class="skill">Python</div>
+      <div class="skill">Data Visualization</div>
+      <div class="skill">Machine Learning</div>
+      <div class="skill">HR Strategy</div>
+      <div class="skill">Behavior Analysis</div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section>
     <h2>Proyectos</h2>
-    <p>Aquí podrás ver pronto mis proyectos y trabajos destacados.</p>
-  </div>
+    <ul>
+      <li><a href="#">📊 Dashboard de Clima Organizacional</a></li>
+      <li><a href="#">🤖 Predicción de rotación de empleados</a></li>
+      <li><a href="#">📈 Análisis de satisfacción laboral</a></li>
+    </ul>
+  </section>
 
-  <div class="section">
+  <!-- Contacto -->
+  <section>
     <h2>Contacto</h2>
-    <p>LinkedIn | GitHub | Email</p>
-  </div>
+    <p>
+      <a href="mailto:fuentessantiagojazmin@gmail.com">Email</a> |
+      <a href="https://linkedin.com/in/fuentjaz">LinkedIn</a> |
+      <a href="https://github.com/fuentjaz">GitHub</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Jazmin Fuentes — Hecho con 💛 y datos
+  </footer>
 </body>
 </html>
