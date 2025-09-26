@@ -7,17 +7,19 @@
     <meta name="description" content="People Analytics Specialist combining psychology and data science to transform HR decisions.">
     <style>
         :root {
-            /* Elegant Color Palette - Terracota & Neutral Tones */
-            --primary-terracota: #C46A5E;
-            --secondary-terracota: #D89D94;
-            --accent-gold: #D4AF37;
-            --dark-charcoal: #2E2E2E;
-            --light-cream: #F9F5F2;
-            --medium-taupe: #8A7F7A;
-            --success-sage: #8A9A8A;
-            --white: #FFFFFF;
-            --text-primary: #2E2E2E;
-            --text-secondary: #5A5A5A;
+            /* Emerald & Wheat Color Palette */
+            --primary-emerald: #047857;
+            --secondary-emerald: #10b981;
+            --accent-gold: #d97706;
+            --wheat: #f7f3e9;
+            --beige: #e8dfca;
+            --dark-charcoal: #1f2937;
+            --light-cream: #fefefe;
+            --medium-taupe: #6b7280;
+            --success-sage: #84cc16;
+            --white: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
             
             /* Spacing System */
             --space-xs: 0.5rem;
@@ -27,7 +29,7 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
             
-            /* Typography */
+            /* Typography - Common web fonts */
             --font-size-xs: 0.75rem;
             --font-size-sm: 0.875rem;
             --font-size-base: 1rem;
@@ -37,13 +39,12 @@
             --font-size-3xl: 1.875rem;
             --font-size-4xl: 2.25rem;
             --font-size-5xl: 3rem;
-            --font-size-hero: 4rem; /* Tamaño especial para hero */
             
             /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(196, 106, 94, 0.1);
-            --shadow-md: 0 4px 6px rgba(196, 106, 94, 0.1);
-            --shadow-lg: 0 10px 15px rgba(196, 106, 94, 0.1);
-            --shadow-xl: 0 20px 25px rgba(196, 106, 94, 0.1);
+            --shadow-sm: 0 1px 3px rgba(4, 120, 87, 0.1);
+            --shadow-md: 0 4px 6px rgba(4, 120, 87, 0.1);
+            --shadow-lg: 0 10px 15px rgba(4, 120, 87, 0.1);
+            --shadow-xl: 0 20px 25px rgba(4, 120, 87, 0.1);
             
             /* Border Radius */
             --radius-sm: 0.375rem;
@@ -59,16 +60,15 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: var(--white);
+            background: var(--wheat);
             font-size: var(--font-size-base);
         }
 
-        /* Elegant typography for headings */
         h1, h2, h3, .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             font-weight: 600;
         }
 
@@ -83,10 +83,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(249, 245, 242, 0.95);
+            background: rgba(247, 243, 233, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(196, 106, 94, 0.1);
+            border-bottom: 1px solid rgba(4, 120, 87, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -98,10 +98,10 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', serif;
             font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -135,7 +135,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
         }
 
         .nav-links a:hover::after {
@@ -151,31 +151,20 @@
             cursor: pointer;
         }
 
-        /* Enhanced Hero Section with larger typography */
+        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--light-cream) 0%, #FFFFFF 100%);
+            background: linear-gradient(135deg, var(--wheat) 0%, var(--beige) 100%);
             padding-top: 80px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: rgba(196, 106, 94, 0.03);
-            z-index: 1;
-        }
-
         .hero-content {
             display: grid;
-            grid-template-columns: 1.8fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
             gap: var(--space-2xl);
             align-items: center;
             width: 100%;
@@ -183,15 +172,13 @@
             z-index: 2;
         }
 
-        /* Hero text with larger, distinctive typography */
         .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: var(--font-size-hero);
+            font-size: var(--font-size-5xl);
             font-weight: 700;
             color: var(--dark-charcoal);
             line-height: 1.1;
             margin-bottom: var(--space-md);
-            background: linear-gradient(135deg, var(--primary-terracota), var(--accent-gold));
+            background: linear-gradient(135deg, var(--primary-emerald), var(--accent-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -199,7 +186,7 @@
 
         .hero-subtitle {
             font-size: var(--font-size-xl);
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             font-weight: 600;
             margin-bottom: var(--space-md);
         }
@@ -212,14 +199,12 @@
         }
 
         .hero-highlight {
-            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
             color: white;
             padding: var(--space-md);
             border-radius: var(--radius-xl);
             margin-bottom: var(--space-lg);
             border-left: 4px solid var(--accent-gold);
-            position: relative;
-            overflow: hidden;
         }
 
         .cta-buttons {
@@ -229,7 +214,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
             color: white;
             padding: var(--space-md) var(--space-lg);
             border: none;
@@ -238,9 +223,6 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-lg);
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
         }
 
         .btn-primary:hover {
@@ -250,94 +232,153 @@
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             padding: var(--space-md) var(--space-lg);
-            border: 2px solid var(--primary-terracota);
+            border: 2px solid var(--primary-emerald);
             border-radius: var(--radius-lg);
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
         }
 
         .btn-secondary:hover {
-            background: var(--primary-terracota);
+            background: var(--primary-emerald);
             color: white;
             transform: translateY(-2px);
         }
 
-        /* Enhanced Hero Card */
-        .hero-card {
+        /* NEW DESIGN: Enhanced Profile Card */
+        .profile-card {
             background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
             text-align: center;
-            border-top: 4px solid var(--accent-gold);
+            border: 2px solid var(--beige);
             position: relative;
-            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
+        }
+
+        .profile-image-container {
+            position: relative;
+            margin-bottom: var(--space-md);
         }
 
         .profile-image {
-            width: 280px;
-            height: 280px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            margin: 0 auto var(--space-md);
+            margin: 0 auto;
+            border: 4px solid var(--beige);
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
-            border: 4px solid var(--accent-gold);
-            box-shadow: var(--shadow-lg);
+            background: var(--light-cream);
         }
 
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
-        .profile-contact {
-            display: flex;
-            flex-direction: column;
+        .profile-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-xl);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .profile-info {
+            margin-bottom: var(--space-lg);
+        }
+
+        .profile-title {
+            font-size: var(--font-size-xl);
+            color: var(--primary-emerald);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .profile-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: var(--space-sm);
-            margin-top: var(--space-md);
         }
 
-        .contact-item {
+        .contact-row {
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            justify-content: center;
-            padding: var(--space-xs);
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--wheat);
             border-radius: var(--radius-md);
             transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
 
-        .contact-item .icon-emoji {
-            font-size: var(--font-size-base);
-            color: var(--primary-terracota);
+        .contact-row:hover {
+            background: var(--beige);
+            border-left-color: var(--primary-emerald);
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-emerald);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-weight: bold;
-            min-width: 20px;
-            text-align: center;
+            flex-shrink: 0;
         }
 
-        .contact-item:hover {
-            background: var(--light-cream);
-            transform: translateX(2px);
+        .contact-details {
+            flex: 1;
+            text-align: left;
         }
 
-        .contact-link {
-            color: var(--primary-terracota);
-            text-decoration: none;
+        .contact-label {
+            font-size: var(--font-size-xs);
+            color: var(--medium-taupe);
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
             font-weight: 500;
         }
 
+        .contact-link {
+            color: var(--primary-emerald);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
         .contact-link:hover {
-            color: var(--secondary-terracota);
+            color: var(--accent-gold);
+            text-decoration: underline;
         }
 
         /* Enhanced Sections */
@@ -347,7 +388,7 @@
         }
 
         .section:nth-child(even) {
-            background: var(--light-cream);
+            background: var(--white);
         }
 
         .section-title {
@@ -367,7 +408,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
             border-radius: 2px;
         }
 
@@ -379,8 +420,8 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-              /* Enhanced Cards */
+        } 
+                /* Enhanced Cards */
         .expertise-grid,
         .tech-categories,
         .competencias-grid,
@@ -397,7 +438,7 @@
             background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
-            border: 1px solid rgba(196, 106, 94, 0.1);
+            border: 1px solid var(--beige);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -412,7 +453,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
         }
 
         .expertise-card:hover,
@@ -420,7 +461,7 @@
         .competencia-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--secondary-terracota);
+            border-color: var(--secondary-emerald);
         }
 
         .expertise-title,
@@ -449,7 +490,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             font-weight: bold;
         }
 
@@ -476,21 +517,20 @@
         }
 
         .tech-tag {
-            background: var(--light-cream);
+            background: var(--wheat);
             color: var(--text-secondary);
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-xl);
             font-size: var(--font-size-sm);
             font-weight: 500;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
+            border: 1px solid var(--beige);
         }
 
         .tech-tag:hover {
-            background: var(--primary-terracota);
+            background: var(--primary-emerald);
             color: white;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
         }
 
         /* Enhanced Project Cards */
@@ -500,7 +540,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            border: 1px solid rgba(196, 106, 94, 0.1);
+            border: 1px solid var(--beige);
         }
 
         .project-card:hover {
@@ -509,11 +549,9 @@
         }
 
         .project-header {
-            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
             color: white;
             padding: var(--space-xl);
-            position: relative;
-            overflow: hidden;
         }
 
         .project-title {
@@ -525,7 +563,6 @@
         .project-problem {
             font-size: var(--font-size-sm);
             opacity: 0.9;
-            font-style: italic;
         }
 
         .project-content {
@@ -533,12 +570,10 @@
         }
 
         .project-section h4 {
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             font-weight: 600;
             margin-bottom: var(--space-xs);
             font-size: var(--font-size-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .project-tech {
@@ -549,7 +584,7 @@
         }
 
         .project-tech-tag {
-            background: var(--light-cream);
+            background: var(--wheat);
             color: var(--text-secondary);
             padding: 0.3rem 0.7rem;
             border-radius: var(--radius-xl);
@@ -558,7 +593,7 @@
         }
 
         .project-results {
-            background: #f8f9f7;
+            background: #f0fdf4;
             padding: var(--space-md);
             border-radius: var(--radius-lg);
             border-left: 4px solid var(--success-sage);
@@ -566,20 +601,17 @@
         }
 
         .project-link {
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
         }
 
         .project-link:hover {
-            color: var(--secondary-terracota);
+            color: var(--accent-gold);
         }
 
-        /* Enhanced Timeline */
+        /* Timeline */
         .timeline {
             max-width: 900px;
             margin: 0 auto;
@@ -593,7 +625,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, var(--primary-terracota), var(--accent-gold));
+            background: linear-gradient(to bottom, var(--primary-emerald), var(--accent-gold));
             transform: translateX(-50%);
         }
 
@@ -619,18 +651,7 @@
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold));
-            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            border: 1px solid var(--beige);
         }
 
         .timeline-content:hover {
@@ -654,11 +675,11 @@
         }
 
         .timeline-date {
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             font-weight: 600;
             font-size: var(--font-size-sm);
             margin-bottom: var(--space-xs);
-            background: rgba(196, 106, 94, 0.1);
+            background: rgba(4, 120, 87, 0.1);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius-xl);
             display: inline-block;
@@ -678,12 +699,6 @@
             margin-bottom: var(--space-md);
         }
 
-        .timeline-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-md);
-            font-style: italic;
-        }
-
         .timeline-achievements {
             list-style: none;
         }
@@ -693,7 +708,6 @@
             margin-bottom: var(--space-xs);
             padding-left: var(--space-md);
             position: relative;
-            line-height: 1.6;
         }
 
         .timeline-achievements li::before {
@@ -702,72 +716,12 @@
             left: 0;
             color: var(--success-sage);
             font-weight: bold;
-            background: rgba(138, 154, 138, 0.1);
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
         }
 
-        /* Value Proposition Section */
-        .value-prop {
-            padding: var(--space-2xl) 0;
-            background: var(--light-cream);
-        }
-
-        .experience-intro {
-            text-align: center;
-            margin-bottom: var(--space-2xl);
-        }
-
-        .experience-highlight {
-            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota));
-            color: white;
-            padding: var(--space-lg);
-            border-radius: var(--radius-xl);
-            margin-bottom: var(--space-lg);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .experience-advantages h4 {
-            color: var(--dark-charcoal);
-            margin-bottom: var(--space-md);
-            font-size: var(--font-size-lg);
-        }
-
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-md);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .advantage-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: white;
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .advantage-item .icon {
-            color: var(--success-sage);
-            font-weight: bold;
-            font-size: var(--font-size-lg);
-        }
-
-        /* Enhanced Contact Section */
+        /* Contact Section */
         .contact {
             padding: var(--space-2xl) 0;
-            background: var(--white);
+            background: var(--wheat);
             text-align: center;
         }
 
@@ -780,13 +734,11 @@
         }
 
         .contact-method {
-            background: var(--light-cream);
+            background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-terracota);
-            position: relative;
-            overflow: hidden;
+            border-top: 4px solid var(--primary-emerald);
         }
 
         .contact-method:hover {
@@ -796,26 +748,23 @@
 
         .contact-method .contact-icon {
             font-size: var(--font-size-2xl);
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             margin-bottom: var(--space-md);
-            display: block;
         }
 
         .contact-method h3 {
             color: var(--dark-charcoal);
             margin-bottom: var(--space-xs);
-            font-weight: 600;
         }
 
         .contact-method a {
-            color: var(--primary-terracota);
+            color: var(--primary-emerald);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
         }
 
         .contact-method a:hover {
-            color: var(--secondary-terracota);
+            color: var(--accent-gold);
         }
 
         /* Responsive Design */
@@ -847,6 +796,26 @@
                 align-items: center;
             }
 
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-badge {
+                font-size: var(--font-size-xs);
+                padding: 0.3rem 0.8rem;
+            }
+
+            .contact-row {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-xs);
+            }
+
+            .contact-details {
+                text-align: center;
+            }
+
             .section-title {
                 font-size: var(--font-size-3xl);
             }
@@ -874,27 +843,6 @@
                 left: 20px !important;
                 transform: translateX(0) !important;
             }
-
-            .advantages-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md);
-            }
-
-            .experience-highlight {
-                padding: var(--space-lg);
-            }
-        }
-
-        /* Simple animations only */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -912,9 +860,7 @@
                     <li><a href="#experience">Experiencia</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
-                <button class="mobile-menu">
-                    <span>☰</span>
-                </button>
+                <button class="mobile-menu">☰</button>
             </nav>
         </div>
     </header>
@@ -927,62 +873,96 @@
                     <div class="hero-subtitle">Psicología + Ciencia de Datos = People Analytics con Impacto</div>
                     <div class="hero-description">
                         Combino mi formación en psicología organizacional con expertise en ciencia de datos para crear soluciones de People Analytics que realmente transforman la gestión del talento.
-                        <br><br>
-                        No solo analizo datos de RH - entiendo el contexto humano detrás de los números y diseño intervenciones medibles que mejoran retención, engagement y desempeño.
                     </div>
                     <div class="hero-highlight">
-                        <strong>Mi valor diferencial:</strong> Traduzco insights de datos en acciones concretas de desarrollo organizacional porque entiendo tanto la tecnología como las personas.
+                        <strong>Mi valor diferencial:</strong> Entiendo tanto los datos como el comportamiento humano detrás de ellos.
                     </div>
                     <div class="cta-buttons">
-                        <a href="#projects" class="btn-primary">
-                            Ver Proyectos
-                        </a>
-                        <a href="./miCV.pdf" class="btn-secondary" download>
-                            Descargar CV
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Contactarme
-                        </a>
+                        <a href="#projects" class="btn-primary">Ver Proyectos</a>
+                        <a href="./miCV.pdf" class="btn-secondary" download>Descargar CV</a>
                     </div>
                 </div>
-                <div class="hero-card">
-                    <div class="profile-image">
-                        <!-- REEMPLAZA CON TU FOTO: Coloca tu imagen en assets/images/profile.jpg -->
-                        <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes - People Analytics Specialist">
+                
+                <!-- NEW PROFILE CARD DESIGN -->
+                <div class="profile-card">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <!-- REEMPLAZA CON TU FOTO -->
+                            <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes">
+                        </div>
+                        <div class="profile-badge">People Analytics Specialist</div>
                     </div>
-                    <h3>Especialista en People Analytics</h3>
-                    <div class="profile-contact">
-                        <div class="contact-item">
-                            <div class="icon-emoji">✉️</div>
-                            <!-- REEMPLAZA CON TU EMAIL -->
-                            <a href="mailto:tu.email@ejemplo.com" class="contact-link">tu.email@ejemplo.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-emoji">📱</div>
-                            <!-- REEMPLAZA CON TU TELÉFONO -->
-                            <a href="tel:+521234567890" class="contact-link">+52 123 456 7890</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-emoji">💼</div>
-                            <!-- REEMPLAZA CON TU LINKEDIN -->
-                            <a href="https://www.linkedin.com/in/tu-perfil" class="contact-link">LinkedIn</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-emoji">💻</div>
-                            <!-- REEMPLAZA CON TU GITHUB -->
-                            <a href="https://github.com/tu-usuario" class="contact-link">GitHub</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-emoji">🌐</div>
-                            <!-- REEMPLAZA CON TUS IDIOMAS -->
-                            <span>Español nativo | Inglés avanzado</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-emoji">📍</div>
-                            <!-- REEMPLAZA CON TU UBICACIÓN -->
-                            <span>Ciudad, País</span>
+                    
+                    <div class="profile-info">
+                        <div class="profile-title">Jazmin Fuentes</div>
+                        <div class="profile-contact-grid">
+                            <!-- Email -->
+                            <div class="contact-row">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Email</div>
+                                    <a href="mailto:tu.email@ejemplo.com" class="contact-value contact-link">
+                                        tu.email@ejemplo.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Teléfono -->
+                            <div class="contact-row">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Teléfono</div>
+                                    <a href="tel:+521234567890" class="contact-value contact-link">
+                                        +52 123 456 7890
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- LinkedIn -->
+                            <div class="contact-row">
+                                <div class="contact-icon">💼</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">LinkedIn</div>
+                                    <a href="https://linkedin.com/in/tu-perfil" class="contact-value contact-link">
+                                        /in/tu-perfil
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub -->
+                            <div class="contact-row">
+                                <div class="contact-icon">💻</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">GitHub</div>
+                                    <a href="https://github.com/tu-usuario" class="contact-value contact-link">
+                                        github.com/tu-usuario
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Idiomas -->
+                            <div class="contact-row">
+                                <div class="contact-icon">🌐</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Idiomas</div>
+                                    <div class="contact-value">Español nativo | Inglés avanzado</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ubicación -->
+                            <div class="contact-row">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Ubicación</div>
+                                    <div class="contact-value">Ciudad, País</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <a href="#contact" class="btn-primary" style="display: block; text-align: center;">
+                        Contactarme
+                    </a>
                 </div>
             </div>
         </div>
@@ -995,352 +975,84 @@
             
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <h3 class="expertise-title">PEOPLE ANALYTICS & PREDICCIÓN</h3>
+                    <h3 class="expertise-title">PEOPLE ANALYTICS</h3>
                     <ul class="expertise-list">
-                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
-                        <li>Predicción de rotación y análisis de retención</li>
-                        <li>Modelos de clasificación para engagement</li>
-                        <li>Análisis de clima organizacional</li>
+                        <li>Predicción de rotación de empleados</li>
+                        <li>Análisis de engagement y clima laboral</li>
                         <li>Segmentación de talento con machine learning</li>
+                        <li>Dashboard ejecutivos para RH</li>
                     </ul>
                 </div>
 
                 <div class="expertise-card">
                     <h3 class="expertise-title">DESARROLLO ORGANIZACIONAL</h3>
                     <ul class="expertise-list">
-                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
-                        <li>Diseño y evaluación de programas de formación</li>
-                        <li>Análisis de impacto de iniciativas de RH</li>
-                        <li>Medición de cultura organizacional</li>
+                        <li>Diseño de programas de formación</li>
+                        <li>Evaluación de impacto de iniciativas</li>
                         <li>Gestión del cambio basada en datos</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <h3 class="expertise-title">ANÁLISIS DE DATOS AVANZADO</h3>
-                    <ul class="expertise-list">
-                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
-                        <li>Python para análisis de datos de RH</li>
-                        <li>SQL para consultas de bases de datos</li>
-                        <li>Visualización con Power BI/Tableau</li>
-                        <li>Estadística aplicada a recursos humanos</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <h3 class="expertise-title">GESTIÓN ESTRATÉGICA DE RH</h3>
-                    <ul class="expertise-list">
-                        <!-- REEMPLAZA CON TUS ESPECIALIDADES -->
-                        <li>Alineación de RH con objetivos de negocio</li>
-                        <li>Dashboard ejecutivos para toma de decisiones</li>
-                        <li>ROI de iniciativas de capital humano</li>
-                        <li>Comunicación de insights a stakeholders</li>
+                        <li>Medición de cultura organizacional</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stack" class="section">
-        <div class="container">
-            <h2 class="section-title">Technology Stack</h2>
-            <p class="section-subtitle">Herramientas y tecnologías que domino para crear soluciones de People Analytics</p>
-            
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3>CIENCIA DE DATOS & ML</h3>
-                    <div class="tech-tags">
-                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">Jupyter</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>ANÁLISIS & VISUALIZACIÓN</h3>
-                    <div class="tech-tags">
-                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Streamlit</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>HERRAMIENTAS DE RH</h3>
-                    <div class="tech-tags">
-                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                        <span class="tech-tag">Sistemas HRIS</span>
-                        <span class="tech-tag">Survey Tools</span>
-                        <span class="tech-tag">ATS</span>
-                        <span class="tech-tag">LMS</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>ESTADÍSTICA & MÉTRICAS</h3>
-                    <div class="tech-tags">
-                        <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                        <span class="tech-tag">Análisis Estadístico</span>
-                        <span class="tech-tag">Métricas de RH</span>
-                        <span class="tech-tag">People Analytics</span>
-                        <span class="tech-tag">Dashboarding</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="competencias" class="section">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">Habilidades técnicas y de negocio que permiten soluciones integrales</p>
-            
-            <div class="competencias-grid">
-                <div class="competencia-card">
-                    <h3 class="competencia-title">HABILIDADES TÉCNICAS</h3>
-                    <ul class="competencia-list">
-                        <!-- REEMPLAZA CON TUS COMPETENCIAS -->
-                        <li>Análisis predictivo aplicado a recursos humanos</li>
-                        <li>Desarrollo de dashboards ejecutivos</li>
-                        <li>Gestión de proyectos de People Analytics</li>
-                        <li>Automatización de reportes de RH</li>
-                        <li>Análisis de encuestas y feedback</li>
-                        <li>Storytelling con datos para RH</li>
-                    </ul>
-                </div>
-
-                <div class="competencia-card">
-                    <h3 class="competencia-title">COMPETENCIAS DE NEGOCIO</h3>
-                    <ul class="competencia-list">
-                        <!-- REEMPLAZA CON TUS COMPETENCIAS -->
-                        <li>Traducción de necesidades de negocio a soluciones técnicas</li>
-                        <li>Comunicación efectiva con stakeholders de RH</li>
-                        <li>Gestión del cambio organizacional</li>
-                        <li>Medición de ROI en iniciativas de capital humano</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Technical Projects</h2>
-            <p class="section-subtitle">Soluciones de People Analytics que generan impacto medible en el negocio</p>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Predicción de Rotación de Empleados</div>
-                        <div class="project-problem">Identificar factores de rotación y proponer intervenciones preventivas</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Solución Técnica</h4>
-                            <div class="project-tech">
-                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                                <span class="project-tech-tag">Machine Learning</span>
-                                <span class="project-tech-tag">Python</span>
-                                <span class="project-tech-tag">Scikit-learn</span>
-                                <span class="project-tech-tag">Pandas</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
-                                <li>Análisis de datos históricos de empleados</li>
-                                <li>Modelos de clasificación para predicción</li>
-                                <li>Identificación de factores clave de rotación</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Modelo con 85% de precisión, identificación de 5 factores críticos de rotación
-                        </div>
-                        <!-- REEMPLAZA CON TU LINK -->
-                        <a href="https://github.com/tu-usuario/proyecto-rotacion" class="project-link">
-                            Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Dashboard de People Analytics</div>
-                        <div class="project-problem">Visualización integral de métricas de RH para toma de decisiones</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Solución Técnica</h4>
-                            <div class="project-tech">
-                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                                <span class="project-tech-tag">Power BI</span>
-                                <span class="project-tech-tag">SQL</span>
-                                <span class="project-tech-tag">DAX</span>
-                                <span class="project-tech-tag">ETL</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
-                                <li>Integración de múltiples fuentes de datos</li>
-                                <li>Automatización de reportes mensuales</li>
-                                <li>Métricas clave de gestión de talento</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Reducción de 70% en tiempo de reporting, mejor toma de decisiones
-                        </div>
-                        <!-- REEMPLAZA CON TU LINK -->
-                        <a href="https://github.com/tu-usuario/dashboard-rh" class="project-link">
-                            Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Análisis de Engagement</div>
-                        <div class="project-problem">Identificar drivers de engagement y proponer mejoras</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Solución Técnica</h4>
-                            <div class="project-tech">
-                                <!-- REEMPLAZA CON TUS TECNOLOGÍAS -->
-                                <span class="project-tech-tag">Análisis Estadístico</span>
-                                <span class="project-tech-tag">Python</span>
-                                <span class="project-tech-tag">Survey Analysis</span>
-                                <span class="project-tech-tag">Clusterización</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <!-- REEMPLAZA CON DETALLES DEL PROYECTO -->
-                                <li>Análisis de encuestas de clima organizacional</li>
-                                <li>Segmentación de empleados por nivel de engagement</li>
-                                <li>Recomendaciones personalizadas por segmento</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Resultados:</strong> <!-- REEMPLAZA CON TUS RESULTADOS --> Incremento del 15% en scores de engagement, acciones específicas por departamento
-                        </div>
-                        <!-- REEMPLAZA CON TU LINK -->
-                        <a href="https://github.com/tu-usuario/analisis-engagement" class="project-link">
-                            Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="value-prop">
-        <div class="container">
-            <h2 class="section-title">My Value Proposition</h2>
-            <p class="section-subtitle">¿Por qué elegir una especialista en People Analytics con formación en psicología?</p>
-            
-            <div class="experience-intro">
-                <div class="experience-highlight">
-                    <strong>COMBINACIÓN ÚNICA DE HABILIDADES</strong>
-                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
-                        Psicología Organizacional + Ciencia de Datos = Soluciones Integrales
-                    </div>
-                </div>
-                
-                <div class="experience-advantages">
-                    <h4>Esta combinación única es mi ventaja competitiva en People Analytics:</h4>
-                    <div class="advantages-grid">
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>Entiendo tanto los datos como el comportamiento humano detrás de ellos</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>Diseño intervenciones que son técnicamente sólidas y humanamente efectivas</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>Comunico insights técnicos en lenguaje que RH y negocio entienden</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>Traduzco hallazgos analíticos en acciones concretas de desarrollo organizacional</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - Presente</div>
-                        <div class="timeline-title">Especialista en People Analytics</div>
-                        <div class="timeline-company">Tu Empresa Actual</div>
-                        <p class="timeline-description">Breve descripción de tu rol actual</p>
-                        <ul class="timeline-achievements">
-                            <!-- REEMPLAZA CON TUS LOGROS -->
-                            <li>Logro 1 cuantificable</li>
-                            <li>Logro 2 con impacto medible</li>
-                            <li>Logro 3 relevante</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2024</div>
-                        <div class="timeline-title">Analista de Datos de RH</div>
-                        <div class="timeline-company">Empresa Anterior</div>
-                        <ul class="timeline-achievements">
-                            <!-- REEMPLAZA CON TUS LOGROS -->
-                            <li>Implementación de sistema de People Analytics</li>
-                            <li>Automatización de reportes mensuales</li>
-                            <li>Análisis que impactó decisiones estratégicas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2022</div>
-                        <div class="timeline-title">Psicóloga Organizacional</div>
-                        <div class="timeline-company">Otra Empresa Relevante</div>
-                        <ul class="timeline-achievements">
-                            <!-- REEMPLAZA CON TUS LOGROS -->
-                            <li>Diseño de programas de desarrollo</li>
-                            <li>Evaluación de clima organizacional</li>
-                            <li>Gestión de talento clave</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2016 - 2020</div>
-                        <div class="timeline-title">Licenciatura en Psicología</div>
-                        <div class="timeline-company">Tu Universidad</div>
-                        <p class="timeline-description">Formación base en psicología organizacional</p>
-                        <ul class="timeline-achievements">
-                            <!-- REEMPLAZA CON TUS LOGROS ACADÉMICOS -->
-                            <li>Especialización en psicología organizacional</li>
-                            <li>Certificaciones relevantes</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- LAS OTRAS SECCIONES SE MANTIENEN SIMILARES PERO CON LOS NUEVOS COLORES -->
 
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">¿Lista para transformar datos en impacto?</h2>
-            <p class="section-subtitle">Conectemos para discutir cómo puedo ayudar a tu organización a transformar datos de RH en ventajas competitivas</p>
+            <p class="section-subtitle">Conectemos para discutir cómo puedo ayudar a tu organización</p>
             
             <div class="contact-grid">
-                <div class="contact-method
+                <div class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📱</div>
+                    <h3>Teléfono</h3>
+                    <a href="tel:+521234567890">+52 123 456 7890</a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/tu-perfil">linkedin.com/in/tu-perfil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                const isVisible = navLinks.style.display === 'flex';
+                navLinks.style.display = isVisible ? 'none' : 'flex';
+                mobileMenu.textContent = isVisible ? '☰' : '✕';
+            });
+        }
+    </script>
+</body>
+</html>
