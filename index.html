@@ -151,7 +151,7 @@
             cursor: pointer;
         }
 
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section - Text moved higher */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -166,10 +166,11 @@
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: var(--space-2xl);
-            align-items: center;
+            align-items: start; /* Changed from center to start */
             width: 100%;
             position: relative;
             z-index: 2;
+            padding-top: var(--space-xl); /* Added padding to move content higher */
         }
 
         .hero-text h1 {
@@ -182,6 +183,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-top: 0; /* Ensure no extra margin */
         }
 
         .hero-subtitle {
@@ -247,7 +249,7 @@
             transform: translateY(-2px);
         }
 
-        /* NEW DESIGN: Enhanced Profile Card */
+        /* NEW PROFILE CARD DESIGN - Conserved as requested */
         .profile-card {
             background: var(--white);
             padding: var(--space-xl);
@@ -257,6 +259,7 @@
             border: 2px solid var(--beige);
             position: relative;
             overflow: hidden;
+            margin-top: var(--space-lg); /* Added margin to align with text */
         }
 
         .profile-card::before {
@@ -420,8 +423,9 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        } 
-                /* Enhanced Cards */
+        }
+
+        /* Enhanced Cards */
         .expertise-grid,
         .tech-categories,
         .competencias-grid,
@@ -718,10 +722,62 @@
             font-weight: bold;
         }
 
+        /* Value Proposition Section */
+        .value-prop {
+            padding: var(--space-2xl) 0;
+            background: var(--wheat);
+        }
+
+        .experience-intro {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .experience-highlight {
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
+            color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-advantages h4 {
+            color: var(--dark-charcoal);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .advantage-item .icon {
+            color: var(--success-sage);
+            font-weight: bold;
+            font-size: var(--font-size-lg);
+        }
+
         /* Contact Section */
         .contact {
             padding: var(--space-2xl) 0;
-            background: var(--wheat);
+            background: var(--white);
             text-align: center;
         }
 
@@ -734,7 +790,7 @@
         }
 
         .contact-method {
-            background: var(--white);
+            background: var(--wheat);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             transition: all 0.3s ease;
@@ -785,6 +841,8 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: var(--space-lg);
+                align-items: center;
+                padding-top: var(--space-md);
             }
 
             .hero-text h1 {
@@ -883,11 +941,10 @@
                     </div>
                 </div>
                 
-                <!-- NEW PROFILE CARD DESIGN -->
+                <!-- NEW PROFILE CARD DESIGN - Conserved as requested -->
                 <div class="profile-card">
                     <div class="profile-image-container">
                         <div class="profile-image">
-                            <!-- REEMPLAZA CON TU FOTO -->
                             <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes">
                         </div>
                         <div class="profile-badge">People Analytics Specialist</div>
@@ -896,7 +953,6 @@
                     <div class="profile-info">
                         <div class="profile-title">Jazmin Fuentes</div>
                         <div class="profile-contact-grid">
-                            <!-- Email -->
                             <div class="contact-row">
                                 <div class="contact-icon">✉️</div>
                                 <div class="contact-details">
@@ -907,7 +963,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Teléfono -->
                             <div class="contact-row">
                                 <div class="contact-icon">📱</div>
                                 <div class="contact-details">
@@ -918,7 +973,6 @@
                                 </div>
                             </div>
                             
-                            <!-- LinkedIn -->
                             <div class="contact-row">
                                 <div class="contact-icon">💼</div>
                                 <div class="contact-details">
@@ -929,7 +983,6 @@
                                 </div>
                             </div>
                             
-                            <!-- GitHub -->
                             <div class="contact-row">
                                 <div class="contact-icon">💻</div>
                                 <div class="contact-details">
@@ -940,7 +993,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Idiomas -->
                             <div class="contact-row">
                                 <div class="contact-icon">🌐</div>
                                 <div class="contact-details">
@@ -949,7 +1001,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Ubicación -->
                             <div class="contact-row">
                                 <div class="contact-icon">📍</div>
                                 <div class="contact-details">
@@ -968,59 +1019,341 @@
         </div>
     </section>
 
+    <!-- Added sections as requested -->
     <section id="expertise" class="section">
         <div class="container">
             <h2 class="section-title">What I Do Best</h2>
-            <p class="section-subtitle">Combinando psicología organizacional con análisis de datos avanzado</p>
+            <p class="section-subtitle">Combining business experience with advanced technical expertise</p>
             
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <h3 class="expertise-title">PEOPLE ANALYTICS</h3>
+                    <h3 class="expertise-title">MACHINE LEARNING & PREDICTIVE ANALYTICS</h3>
                     <ul class="expertise-list">
-                        <li>Predicción de rotación de empleados</li>
-                        <li>Análisis de engagement y clima laboral</li>
-                        <li>Segmentación de talento con machine learning</li>
-                        <li>Dashboard ejecutivos para RH</li>
+                        <li>Classification: Churn prediction, sentiment analysis, fraud detection</li>
+                        <li>Regression: Pricing optimization, demand forecasting</li>
+                        <li>Advanced Algorithms: XGBoost, LightGBM, CatBoost</li>
+                        <li>Model Optimization: Hyperparameter tuning, cross-validation</li>
                     </ul>
                 </div>
 
                 <div class="expertise-card">
-                    <h3 class="expertise-title">DESARROLLO ORGANIZACIONAL</h3>
+                    <h3 class="expertise-title">DEEP LEARNING & NLP</h3>
                     <ul class="expertise-list">
-                        <li>Diseño de programas de formación</li>
-                        <li>Evaluación de impacto de iniciativas</li>
-                        <li>Gestión del cambio basada en datos</li>
-                        <li>Medición de cultura organizacional</li>
+                        <li>Transformers & BERT for text classification</li>
+                        <li>PyTorch, TensorFlow implementations</li>
+                        <li>Classical NLP: NLTK, spaCy processing</li>
+                        <li>Advanced feature engineering</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="expertise-title">DATA ENGINEERING & ANALYSIS</h3>
+                    <ul class="expertise-list">
+                        <li>Python (expert), SQL (advanced)</li>
+                        <li>Core Libraries: Pandas, NumPy, Scikit-learn</li>
+                        <li>Visualization: Matplotlib, Seaborn, Plotly</li>
+                        <li>Statistics: A/B testing, hypothesis testing</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="expertise-title">BUSINESS INTEGRATION</h3>
+                    <ul class="expertise-list">
+                        <li>Cross-industry experience: Mining, tech, retail, telecom</li>
+                        <li>Problem translation: Business needs to technical solutions</li>
+                        <li>ROI-focused model design</li>
+                        <li>Executive communication</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LAS OTRAS SECCIONES SE MANTIENEN SIMILARES PERO CON LOS NUEVOS COLORES -->
+    <section id="stack" class="section">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-subtitle">Tools and technologies I master to create valuable solutions</p>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>MACHINE LEARNING & AI</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">LightGBM</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>NLP & DEEP LEARNING</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">NLTK</span>
+                        <span class="tech-tag">spaCy</span>
+                        <span class="tech-tag">Sentiment Analysis</span>
+                        <span class="tech-tag">Keras</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>DATA ANALYSIS & VISUALIZATION</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">Seaborn</span>
+                        <span class="tech-tag">Plotly</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>BUSINESS INTELLIGENCE</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">A/B Testing</span>
+                        <span class="tech-tag">Cross-validation</span>
+                        <span class="tech-tag">Bootstrapping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competencias" class="section">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Technical and business skills that enable comprehensive solutions</p>
+            
+            <div class="competencias-grid">
+                <div class="competencia-card">
+                    <h3 class="competencia-title">TECHNICAL SKILLS</h3>
+                    <ul class="competencia-list">
+                        <li>End-to-End ML Projects: Problem definition to production deployment</li>
+                        <li>Algorithm Selection: Deep understanding of when/why to use specific models</li>
+                        <li>Model Validation: Cross-validation, bootstrapping, hold-out testing</li>
+                        <li>Performance Optimization: Balancing accuracy, speed, interpretability</li>
+                        <li>Feature Engineering: Domain expertise + automated selection</li>
+                        <li>Code Quality: Clean, documented, reproducible analysis</li>
+                    </ul>
+                </div>
+
+                <div class="competencia-card">
+                    <h3 class="competencia-title">BUSINESS ACUMEN</h3>
+                    <ul class="competencia-list">
+                        <li>Problem Translation: Converting business needs into technical requirements</li>
+                        <li>ROI Focus: Ensuring ML solutions generate measurable business value</li>
+                        <li>Stakeholder Communication: Explaining technical concepts clearly</li>
+                        <li>Project Management: Delivering complex projects on time and scope</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Technical Projects</h2>
+            <p class="section-subtitle">End-to-end ML solutions that generate measurable business impact</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Customer Churn Prediction</div>
+                        <div class="project-problem">Predict cancellations in telecommunications for proactive retention</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Technical Solution</h4>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">Data Pipeline</span>
+                                <span class="project-tech-tag">Feature Engineering</span>
+                                <span class="project-tech-tag">5 ML Algorithms</span>
+                                <span class="project-tech-tag">GridSearchCV</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li>Data Pipeline: Cleaning, feature engineering, missing values treatment</li>
+                                <li>Model Comparison: 5 algorithms (Logistic Regression, Random Forest, XGBoost)</li>
+                                <li>Optimization: GridSearchCV for hyperparameter tuning</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Results:</strong> 85%+ accuracy, productionized model with actionable recommendations
+                        </div>
+                        <a href="https://github.com/banderasjuan/Interconnnect" class="project-link">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Automated Vehicle Pricing</div>
+                        <div class="project-problem">Automate used vehicle valuation while maintaining high precision</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Technical Solution</h4>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">XGBoost</span>
+                                <span class="project-tech-tag">LightGBM</span>
+                                <span class="project-tech-tag">CatBoost</span>
+                                <span class="project-tech-tag">Ensemble</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li>Feature Engineering: Categorical encoding, numerical scaling</li>
+                                <li>Model Ensemble: XGBoost, LightGBM, CatBoost comparison</li>
+                                <li>Performance Optimization: Speed vs accuracy tradeoff analysis</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Results:</strong> 90%+ processing time reduction, optimized RMSE for precision pricing
+                        </div>
+                        <a href="https://github.com/banderasjuan/rusty_bargain" class="project-link">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Advanced Sentiment Analysis</div>
+                        <div class="project-problem">Automatic sentiment classification in movie reviews</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-section">
+                            <h4>Technical Solution</h4>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">BERT</span>
+                                <span class="project-tech-tag">PyTorch</span>
+                                <span class="project-tech-tag">Transformers</span>
+                                <span class="project-tech-tag">NLTK</span>
+                            </div>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li>NLP Pipeline: Text preprocessing, lemmatization (NLTK + spaCy)</li>
+                                <li>Model Comparison: BERT/Transformers vs TF-IDF + classical ML</li>
+                                <li>Deep Learning: PyTorch implementation for BERT fine-tuning</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <strong>Results:</strong> Industrial-grade accuracy, 80% reduction in manual process
+                        </div>
+                        <a href="https://github.com/banderasjuan/Film_junky_union" class="project-link">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-prop">
+        <div class="container">
+            <h2 class="section-title">My Value Proposition</h2>
+            <p class="section-subtitle">Why choose a Data Scientist with business experience?</p>
+            
+            <div class="experience-intro">
+                <div class="experience-highlight">
+                    <strong>PROFESSIONAL TRANSITION CONTEXT</strong>
+                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
+                        10+ years in marketing, operations and sales before transitioning to data science
+                    </div>
+                </div>
+                
+                <div class="experience-advantages">
+                    <h4>This extensive business experience is my competitive advantage as a Data Scientist:</h4>
+                    <div class="advantages-grid">
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I understand the context where my models will be implemented</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I know the real pain points that data must solve</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I speak the business language to communicate technical insights</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I know which metrics really matter for each stakeholder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-title">Data Scientist Certification</div>
+                        <div class="timeline-company">Tripleten Bootcamp</div>
+                        <p class="timeline-description">Intensive 10-month program covering ML, DL, NLP, and business applications</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Oct 2022 - Present</div>
+                        <div class="timeline-title">Business Development Leader</div>
+                        <div class="timeline-company">Inlog Logistics Solutions</div>
+                        <ul class="timeline-achievements">
+                            <li>30%+ revenue growth through data-driven business development</li>
+                            <li>Implementation of supply chain analytics platform</li>
+                            <li>70% customer retention through value-added strategies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2017 - Oct 2022</div>
+                        <div class="timeline-title">Operations Manager</div>
+                        <div class="timeline-company">Inlog Logistics</div>
+                        <ul class="timeline-achievements">
+                            <li>40% process automation using operational data analysis</li>
+                            <li>35% efficiency improvement implementing optimized systems</li>
+                            <li>Digital transformation of traditional workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">¿Lista para transformar datos en impacto?</h2>
-            <p class="section-subtitle">Conectemos para discutir cómo puedo ayudar a tu organización</p>
+            <h2 class="section-title">Ready to Transform Data into Impact?</h2>
+            <p class="section-subtitle">Let's connect to discuss how I can help your organization transform data into competitive advantages</p>
             
             <div class="contact-grid">
                 <div class="contact-method">
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
-                    <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a>
+                    <a href="mailto:juanbanderas387@gmail.com">juanbanderas387@gmail.com</a>
                 </div>
                 
                 <div class="contact-method">
                     <div class="contact-icon">📱</div>
-                    <h3>Teléfono</h3>
-                    <a href="tel:+521234567890">+52 123 456 7890</a>
+                    <h3>Phone</h3>
+                    <a href="tel:+524435290308">+52 443 529 0308</a>
                 </div>
                 
                 <div class="contact-method">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://linkedin.com/in/tu-perfil">linkedin.com/in/tu-perfil</a>
+                    <div class="contact-icon">💻</div>
+                    <h3>Complete Portfolio</h3>
+                    <a href="https://github.com/banderasjuan">github.com/banderasjuan</a>
                 </div>
             </div>
         </div>
