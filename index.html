@@ -7,16 +7,17 @@
     <meta name="description" content="People Analytics Specialist combining psychology and data science to transform HR decisions.">
     <style>
         :root {
-            /* Elegant Feminine Color Palette - Beige, Café, Rosa Palo */
-            --primary-cafe: #8B7355;           /* Café cálido principal */
-            --secondary-cafe: #A99276;         /* Café más claro */
-            --accent-rosa: #D4B8B8;           /* Rosa palo suave */
-            --beige-claro: #F5F1E8;           /* Beige claro de fondo */
-            --beige-medio: #E8DFD0;           /* Beige medio */
-            --blanco: #FFFFFF;                /* Blanco puro */
-            --cafe-oscuro: #5D4037;           /* Café oscuro para texto */
-            --cafe-medio: #7A655F;            /* Café medio para texto secundario */
-            --suave-verde: #A5B8A5;           /* Verde suave para acentos */
+            /* Elegant Color Palette - Terracota & Neutral Tones */
+            --primary-terracota: #C46A5E;
+            --secondary-terracota: #D89D94;
+            --accent-gold: #D4AF37;
+            --dark-charcoal: #2E2E2E;
+            --light-cream: #F9F5F2;
+            --medium-taupe: #8A7F7A;
+            --success-sage: #8A9A8A;
+            --white: #FFFFFF;
+            --text-primary: #2E2E2E;
+            --text-secondary: #5A5A5A;
             
             /* Spacing System */
             --space-xs: 0.5rem;
@@ -26,7 +27,7 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
             
-            /* Typography - Elegant web fonts */
+            /* Typography - Common web fonts */
             --font-size-xs: 0.75rem;
             --font-size-sm: 0.875rem;
             --font-size-base: 1rem;
@@ -37,11 +38,11 @@
             --font-size-4xl: 2.25rem;
             --font-size-5xl: 3rem;
             
-            /* Shadows - Suaves y elegantes */
-            --shadow-sm: 0 1px 3px rgba(139, 115, 85, 0.1);
-            --shadow-md: 0 4px 6px rgba(139, 115, 85, 0.08);
-            --shadow-lg: 0 10px 15px rgba(139, 115, 85, 0.06);
-            --shadow-xl: 0 20px 25px rgba(139, 115, 85, 0.05);
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(196, 106, 94, 0.1);
+            --shadow-md: 0 4px 6px rgba(196, 106, 94, 0.1);
+            --shadow-lg: 0 10px 15px rgba(196, 106, 94, 0.1);
+            --shadow-xl: 0 20px 25px rgba(196, 106, 94, 0.1);
             
             /* Border Radius */
             --radius-sm: 0.375rem;
@@ -59,15 +60,14 @@
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: var(--cafe-oscuro);
-            background: var(--beige-claro);
+            color: var(--text-primary);
+            background: var(--light-cream); /* CORREGIDO: usaba --wheat que no existe */
             font-size: var(--font-size-base);
         }
 
         h1, h2, h3, .section-title {
             font-family: 'Georgia', 'Times New Roman', serif;
             font-weight: 600;
-            color: var(--cafe-oscuro);
         }
 
         .container {
@@ -81,10 +81,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(245, 241, 232, 0.95);
+            background: rgba(249, 245, 242, 0.95); /* CORREGIDO: usaba rgba con colores no definidos */
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            border-bottom: 1px solid rgba(196, 106, 94, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -99,7 +99,7 @@
             font-family: 'Georgia', serif;
             font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO: usaba --primary-emerald */
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -114,7 +114,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             font-weight: 500;
             font-size: var(--font-size-sm);
             transition: all 0.3s ease;
@@ -128,12 +128,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-rosa);
+            background: var(--accent-gold);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
         }
 
         .nav-links a:hover::after {
@@ -145,7 +145,7 @@
             background: none;
             border: none;
             font-size: var(--font-size-xl);
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             cursor: pointer;
         }
 
@@ -154,7 +154,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--beige-claro) 0%, var(--blanco) 100%);
+            background: linear-gradient(135deg, var(--light-cream) 0%, var(--white) 100%); /* CORREGIDO */
             padding-top: 80px;
             position: relative;
             overflow: hidden;
@@ -174,10 +174,10 @@
         .hero-text h1 {
             font-size: var(--font-size-5xl);
             font-weight: 700;
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             line-height: 1.1;
             margin-bottom: var(--space-md);
-            background: linear-gradient(135deg, var(--primary-cafe), var(--accent-rosa));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -186,25 +186,25 @@
 
         .hero-subtitle {
             font-size: var(--font-size-xl);
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-md);
         }
 
         .hero-description {
             font-size: var(--font-size-lg);
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             margin-bottom: var(--space-lg);
             line-height: 1.7;
         }
 
         .hero-highlight {
-            background: linear-gradient(135deg, var(--primary-cafe), var(--secondary-cafe));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-md);
             border-radius: var(--radius-xl);
             margin-bottom: var(--space-lg);
-            border-left: 4px solid var(--accent-rosa);
+            border-left: 4px solid var(--accent-gold);
         }
 
         .cta-buttons {
@@ -214,7 +214,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-cafe), var(--secondary-cafe));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-md) var(--space-lg);
             border: none;
@@ -232,9 +232,9 @@
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             padding: var(--space-md) var(--space-lg);
-            border: 2px solid var(--primary-cafe);
+            border: 2px solid var(--primary-terracota); /* CORREGIDO */
             border-radius: var(--radius-lg);
             font-weight: 600;
             text-decoration: none;
@@ -242,19 +242,19 @@
         }
 
         .btn-secondary:hover {
-            background: var(--primary-cafe);
+            background: var(--primary-terracota); /* CORREGIDO */
             color: white;
             transform: translateY(-2px);
         }
 
         /* Profile Card Design */
         .profile-card {
-            background: var(--blanco);
+            background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
             text-align: center;
-            border: 2px solid var(--beige-medio);
+            border: 2px solid var(--light-cream); /* CORREGIDO */
             position: relative;
             overflow: hidden;
             margin-top: var(--space-lg);
@@ -267,7 +267,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, var(--primary-cafe), var(--accent-rosa));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
         }
 
         .profile-image-container {
@@ -280,11 +280,11 @@
             height: 200px;
             border-radius: 50%;
             margin: 0 auto;
-            border: 4px solid var(--beige-medio);
+            border: 4px solid var(--light-cream); /* CORREGIDO */
             box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
-            background: var(--blanco);
+            background: var(--white);
         }
 
         .profile-image img {
@@ -298,8 +298,8 @@
             bottom: 10px;
             right: 50%;
             transform: translateX(50%);
-            background: var(--accent-rosa);
-            color: var(--cafe-oscuro);
+            background: var(--accent-gold);
+            color: white;
             padding: 0.5rem 1rem;
             border-radius: var(--radius-xl);
             font-size: var(--font-size-sm);
@@ -313,7 +313,7 @@
 
         .profile-title {
             font-size: var(--font-size-xl);
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-sm);
         }
@@ -329,22 +329,22 @@
             align-items: center;
             gap: var(--space-sm);
             padding: var(--space-sm);
-            background: var(--beige-claro);
+            background: var(--light-cream); /* CORREGIDO */
             border-radius: var(--radius-md);
             transition: all 0.3s ease;
             border-left: 3px solid transparent;
         }
 
         .contact-row:hover {
-            background: var(--beige-medio);
-            border-left-color: var(--primary-cafe);
+            background: var(--white);
+            border-left-color: var(--primary-terracota); /* CORREGIDO */
             transform: translateX(4px);
         }
 
         .contact-icon {
             width: 32px;
             height: 32px;
-            background: var(--primary-cafe);
+            background: var(--primary-terracota); /* CORREGIDO */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -361,24 +361,24 @@
 
         .contact-label {
             font-size: var(--font-size-xs);
-            color: var(--cafe-medio);
+            color: var(--medium-taupe);
             margin-bottom: 2px;
         }
 
         .contact-value {
             font-size: var(--font-size-sm);
-            color: var(--cafe-oscuro);
+            color: var(--text-primary);
             font-weight: 500;
         }
 
         .contact-link {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-link:hover {
-            color: var(--accent-rosa);
+            color: var(--accent-gold);
             text-decoration: underline;
         }
 
@@ -389,13 +389,13 @@
         }
 
         .section:nth-child(even) {
-            background: var(--blanco);
+            background: var(--white);
         }
 
         .section-title {
             font-size: var(--font-size-4xl);
             font-weight: 700;
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             text-align: center;
             margin-bottom: var(--space-md);
             position: relative;
@@ -409,13 +409,13 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-cafe), var(--accent-rosa));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             border-radius: 2px;
         }
 
         .section-subtitle {
             font-size: var(--font-size-lg);
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             text-align: center;
             margin-bottom: var(--space-2xl);
             max-width: 600px;
@@ -437,10 +437,10 @@
         .expertise-card,
         .tech-category,
         .competencia-card {
-            background: var(--blanco);
+            background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
-            border: 1px solid var(--beige-medio);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -455,7 +455,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-cafe), var(--accent-rosa));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
         }
 
         .expertise-card:hover,
@@ -463,14 +463,14 @@
         .competencia-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--secondary-cafe);
+            border-color: var(--secondary-terracota); /* CORREGIDO */
         }
 
         .expertise-title,
         .competencia-title {
             font-size: var(--font-size-xl);
             font-weight: 600;
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             margin-bottom: var(--space-md);
         }
 
@@ -481,7 +481,7 @@
 
         .expertise-list li,
         .competencia-list li {
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             margin-bottom: var(--space-xs);
             padding-left: var(--space-md);
             position: relative;
@@ -492,7 +492,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: bold;
         }
 
@@ -500,13 +500,13 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--suave-verde);
+            color: var(--success-sage);
             font-weight: bold;
         }
 
         /* Enhanced Tech Tags */
         .tech-category h3 {
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             margin-bottom: var(--space-md);
             font-size: var(--font-size-xl);
             font-weight: 600;
@@ -519,30 +519,30 @@
         }
 
         .tech-tag {
-            background: var(--beige-claro);
-            color: var(--cafe-medio);
+            background: var(--light-cream); /* CORREGIDO */
+            color: var(--text-secondary);
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-xl);
             font-size: var(--font-size-sm);
             font-weight: 500;
             transition: all 0.3s ease;
-            border: 1px solid var(--beige-medio);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .tech-tag:hover {
-            background: var(--primary-cafe);
+            background: var(--primary-terracota); /* CORREGIDO */
             color: white;
             transform: translateY(-2px);
         }
 
         /* Enhanced Project Cards */
         .project-card {
-            background: var(--blanco);
+            background: var(--white);
             border-radius: var(--radius-xl);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            border: 1px solid var(--beige-medio);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .project-card:hover {
@@ -551,7 +551,7 @@
         }
 
         .project-header {
-            background: linear-gradient(135deg, var(--primary-cafe), var(--secondary-cafe));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-xl);
         }
@@ -572,7 +572,7 @@
         }
 
         .project-section h4 {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-xs);
             font-size: var(--font-size-sm);
@@ -586,8 +586,8 @@
         }
 
         .project-tech-tag {
-            background: var(--beige-claro);
-            color: var(--cafe-medio);
+            background: var(--light-cream); /* CORREGIDO */
+            color: var(--text-secondary);
             padding: 0.3rem 0.7rem;
             border-radius: var(--radius-xl);
             font-size: var(--font-size-xs);
@@ -595,22 +595,22 @@
         }
 
         .project-results {
-            background: #f8f6f0;
+            background: #f0fdf4;
             padding: var(--space-md);
             border-radius: var(--radius-lg);
-            border-left: 4px solid var(--suave-verde);
+            border-left: 4px solid var(--success-sage);
             margin: var(--space-md) 0;
         }
 
         .project-link {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            color: var(--accent-rosa);
+            color: var(--accent-gold);
         }
 
         /* Timeline */
@@ -627,17 +627,22 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, var(--primary-cafe), var(--accent-rosa));
+            background: linear-gradient(to bottom, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             transform: translateX(-50%);
         }
 
+        .timeline-item {
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
         .timeline-content {
-            background: var(--blanco);
+            background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            border: 1px solid var(--beige-medio);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .timeline-content:hover {
@@ -653,7 +658,7 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: var(--accent-rosa);
+            background: var(--accent-gold);
             border: 4px solid white;
             transform: translateX(-50%);
             box-shadow: var(--shadow-md);
@@ -661,11 +666,11 @@
         }
 
         .timeline-date {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             font-size: var(--font-size-sm);
             margin-bottom: var(--space-xs);
-            background: rgba(139, 115, 85, 0.1);
+            background: rgba(196, 106, 94, 0.1);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius-xl);
             display: inline-block;
@@ -674,12 +679,12 @@
         .timeline-title {
             font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             margin-bottom: var(--space-xs);
         }
 
         .timeline-company {
-            color: var(--accent-rosa);
+            color: var(--accent-gold);
             font-weight: 600;
             font-size: var(--font-size-lg);
             margin-bottom: var(--space-md);
@@ -690,7 +695,7 @@
         }
 
         .timeline-achievements li {
-            color: var(--cafe-medio);
+            color: var(--text-secondary);
             margin-bottom: var(--space-xs);
             padding-left: var(--space-md);
             position: relative;
@@ -700,14 +705,14 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--suave-verde);
+            color: var(--success-sage);
             font-weight: bold;
         }
 
         /* Value Proposition Section */
         .value-prop {
             padding: var(--space-2xl) 0;
-            background: var(--beige-claro);
+            background: var(--light-cream); /* CORREGIDO */
         }
 
         .experience-intro {
@@ -716,7 +721,7 @@
         }
 
         .experience-highlight {
-            background: linear-gradient(135deg, var(--primary-cafe), var(--secondary-cafe));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-lg);
             border-radius: var(--radius-xl);
@@ -728,7 +733,7 @@
 
         .contact {
             padding: var(--space-2xl) 0;
-            background: var(--blanco);
+            background: var(--white);
             text-align: center;
         }
 
@@ -741,11 +746,11 @@
         }
 
         .contact-method {
-            background: var(--beige-claro);
+            background: var(--light-cream); /* CORREGIDO */
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-cafe);
+            border-top: 4px solid var(--primary-terracota); /* CORREGIDO */
         }
 
         .contact-method:hover {
@@ -755,26 +760,26 @@
 
         .contact-method .contact-icon {
             font-size: var(--font-size-2xl);
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             margin-bottom: var(--space-md);
         }
 
         .contact-method h3 {
-            color: var(--cafe-oscuro);
+            color: var(--dark-charcoal);
             margin-bottom: var(--space-xs);
         }
 
         .contact-method a {
-            color: var(--primary-cafe);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             font-weight: 600;
         }
 
         .contact-method a:hover {
-            color: var(--accent-rosa);
+            color: var(--accent-gold);
         }
 
-        /* Responsive Design */
+        /* Responsive Design - Se mantiene igual */
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -839,122 +844,7 @@
     </style>
 </head>
 <body>
-    <!-- El resto del HTML se mantiene igual -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#home" class="logo">Jazmin Fuentes</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#stack">Tech Stack</a></li>
-                    <li><a href="#competencias">Competencias</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#experience">Experiencia</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-                <button class="mobile-menu">☰</button>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transformo Datos en Decisiones Estratégicas de Talento</h1>
-                    <div class="hero-subtitle">Psicología + Ciencia de Datos = People Analytics con Impacto</div>
-                    <div class="hero-description">
-                        Combino mi formación en psicología organizacional con expertise en ciencia de datos para crear soluciones de People Analytics que realmente transforman la gestión del talento.
-                    </div>
-                    <div class="hero-highlight">
-                        <strong>Mi valor diferencial:</strong> Entiendo tanto los datos como el comportamiento humano detrás de ellos.
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn-primary">Ver Proyectos</a>
-                        <a href="./miCV.pdf" class="btn-secondary" download>Descargar CV</a>
-                    </div>
-                </div>
-                
-                <!-- Profile Card Design -->
-                <div class="profile-card">
-                    <div class="profile-image-container">
-                        <div class="profile-image">
-                            <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes">
-                        </div>
-                        <div class="profile-badge">People Analytics Specialist</div>
-                    </div>
-                    
-                    <div class="profile-info">
-                        <div class="profile-title">Jazmin Fuentes</div>
-                        <div class="profile-contact-grid">
-                            <div class="contact-row">
-                                <div class="contact-icon">✉️</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Email</div>
-                                    <a href="mailto:tu.email@ejemplo.com" class="contact-value contact-link">
-                                        tu.email@ejemplo.com
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">📱</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Teléfono</div>
-                                    <a href="tel:+521234567890" class="contact-value contact-link">
-                                        +52 123 456 7890
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">💼</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">LinkedIn</div>
-                                    <a href="https://linkedin.com/in/tu-perfil" class="contact-value contact-link">
-                                        /in/tu-perfil
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">💻</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">GitHub</div>
-                                    <a href="https://github.com/tu-usuario" class="contact-value contact-link">
-                                        github.com/tu-usuario
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">🌐</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Idiomas</div>
-                                    <div class="contact-value">Español nativo | Inglés avanzado</div>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">📍</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Ubicación</div>
-                                    <div class="contact-value">Ciudad, País</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary" style="display: block; text-align: center;">
-                        Contactarme
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-       <!-- Added sections as requested -->
+    <!-- Added sections as requested -->
     <section id="expertise" class="section">
         <div class="container">
             <h2 class="section-title">What I Do Best</h2>
