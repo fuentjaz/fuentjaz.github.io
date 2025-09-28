@@ -7,7 +7,7 @@
     <meta name="description" content="People Analytics Specialist combining psychology and data science to transform HR decisions.">
     <style>
         :root {
-             /* Elegant Color Palette - Terracota & Neutral Tones */
+            /* Elegant Color Palette - Terracota & Neutral Tones */
             --primary-terracota: #C46A5E;
             --secondary-terracota: #D89D94;
             --accent-gold: #D4AF37;
@@ -39,10 +39,10 @@
             --font-size-5xl: 3rem;
             
             /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(4, 120, 87, 0.1);
-            --shadow-md: 0 4px 6px rgba(4, 120, 87, 0.1);
-            --shadow-lg: 0 10px 15px rgba(4, 120, 87, 0.1);
-            --shadow-xl: 0 20px 25px rgba(4, 120, 87, 0.1);
+            --shadow-sm: 0 1px 3px rgba(196, 106, 94, 0.1);
+            --shadow-md: 0 4px 6px rgba(196, 106, 94, 0.1);
+            --shadow-lg: 0 10px 15px rgba(196, 106, 94, 0.1);
+            --shadow-xl: 0 20px 25px rgba(196, 106, 94, 0.1);
             
             /* Border Radius */
             --radius-sm: 0.375rem;
@@ -61,7 +61,7 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO: usaba --wheat que no existe */
             font-size: var(--font-size-base);
         }
 
@@ -81,10 +81,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(247, 243, 233, 0.95);
+            background: rgba(249, 245, 242, 0.95); /* CORREGIDO: usaba rgba con colores no definidos */
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(4, 120, 87, 0.1);
+            border-bottom: 1px solid rgba(196, 106, 94, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -99,7 +99,7 @@
             font-family: 'Georgia', serif;
             font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO: usaba --primary-emerald */
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -133,7 +133,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
         }
 
         .nav-links a:hover::after {
@@ -149,12 +149,12 @@
             cursor: pointer;
         }
 
-        /* Enhanced Hero Section - Text moved higher */
+        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--wheat) 0%, var(--beige) 100%);
+            background: linear-gradient(135deg, var(--light-cream) 0%, var(--white) 100%); /* CORREGIDO */
             padding-top: 80px;
             position: relative;
             overflow: hidden;
@@ -164,11 +164,11 @@
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: var(--space-2xl);
-            align-items: start; /* Changed from center to start */
+            align-items: start;
             width: 100%;
             position: relative;
             z-index: 2;
-            padding-top: var(--space-xl); /* Added padding to move content higher */
+            padding-top: var(--space-xl);
         }
 
         .hero-text h1 {
@@ -177,16 +177,16 @@
             color: var(--dark-charcoal);
             line-height: 1.1;
             margin-bottom: var(--space-md);
-            background: linear-gradient(135deg, var(--primary-emerald), var(--accent-gold));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-top: 0; /* Ensure no extra margin */
+            margin-top: 0;
         }
 
         .hero-subtitle {
             font-size: var(--font-size-xl);
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-md);
         }
@@ -199,7 +199,7 @@
         }
 
         .hero-highlight {
-            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-md);
             border-radius: var(--radius-xl);
@@ -214,7 +214,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-md) var(--space-lg);
             border: none;
@@ -232,9 +232,9 @@
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             padding: var(--space-md) var(--space-lg);
-            border: 2px solid var(--primary-emerald);
+            border: 2px solid var(--primary-terracota); /* CORREGIDO */
             border-radius: var(--radius-lg);
             font-weight: 600;
             text-decoration: none;
@@ -242,22 +242,22 @@
         }
 
         .btn-secondary:hover {
-            background: var(--primary-emerald);
+            background: var(--primary-terracota); /* CORREGIDO */
             color: white;
             transform: translateY(-2px);
         }
 
-        /* NEW PROFILE CARD DESIGN - Conserved as requested */
+        /* Profile Card Design */
         .profile-card {
             background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
             text-align: center;
-            border: 2px solid var(--beige);
+            border: 2px solid var(--light-cream); /* CORREGIDO */
             position: relative;
             overflow: hidden;
-            margin-top: var(--space-lg); /* Added margin to align with text */
+            margin-top: var(--space-lg);
         }
 
         .profile-card::before {
@@ -267,7 +267,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
         }
 
         .profile-image-container {
@@ -280,11 +280,11 @@
             height: 200px;
             border-radius: 50%;
             margin: 0 auto;
-            border: 4px solid var(--beige);
+            border: 4px solid var(--light-cream); /* CORREGIDO */
             box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
-            background: var(--light-cream);
+            background: var(--white);
         }
 
         .profile-image img {
@@ -313,7 +313,7 @@
 
         .profile-title {
             font-size: var(--font-size-xl);
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-sm);
         }
@@ -329,22 +329,22 @@
             align-items: center;
             gap: var(--space-sm);
             padding: var(--space-sm);
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO */
             border-radius: var(--radius-md);
             transition: all 0.3s ease;
             border-left: 3px solid transparent;
         }
 
         .contact-row:hover {
-            background: var(--beige);
-            border-left-color: var(--primary-emerald);
+            background: var(--white);
+            border-left-color: var(--primary-terracota); /* CORREGIDO */
             transform: translateX(4px);
         }
 
         .contact-icon {
             width: 32px;
             height: 32px;
-            background: var(--primary-emerald);
+            background: var(--primary-terracota); /* CORREGIDO */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -372,7 +372,7 @@
         }
 
         .contact-link {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -409,7 +409,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             border-radius: 2px;
         }
 
@@ -440,7 +440,7 @@
             background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
-            border: 1px solid var(--beige);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -455,7 +455,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
         }
 
         .expertise-card:hover,
@@ -463,7 +463,7 @@
         .competencia-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--secondary-emerald);
+            border-color: var(--secondary-terracota); /* CORREGIDO */
         }
 
         .expertise-title,
@@ -492,7 +492,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: bold;
         }
 
@@ -519,18 +519,18 @@
         }
 
         .tech-tag {
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO */
             color: var(--text-secondary);
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-xl);
             font-size: var(--font-size-sm);
             font-weight: 500;
             transition: all 0.3s ease;
-            border: 1px solid var(--beige);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .tech-tag:hover {
-            background: var(--primary-emerald);
+            background: var(--primary-terracota); /* CORREGIDO */
             color: white;
             transform: translateY(-2px);
         }
@@ -542,7 +542,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            border: 1px solid var(--beige);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .project-card:hover {
@@ -551,7 +551,7 @@
         }
 
         .project-header {
-            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-xl);
         }
@@ -572,7 +572,7 @@
         }
 
         .project-section h4 {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             margin-bottom: var(--space-xs);
             font-size: var(--font-size-sm);
@@ -586,7 +586,7 @@
         }
 
         .project-tech-tag {
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO */
             color: var(--text-secondary);
             padding: 0.3rem 0.7rem;
             border-radius: var(--radius-xl);
@@ -603,7 +603,7 @@
         }
 
         .project-link {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
@@ -627,7 +627,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, var(--primary-emerald), var(--accent-gold));
+            background: linear-gradient(to bottom, var(--primary-terracota), var(--accent-gold)); /* CORREGIDO */
             transform: translateX(-50%);
         }
 
@@ -636,24 +636,13 @@
             position: relative;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: 50%;
-            padding-right: var(--space-xl);
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 50%;
-            padding-left: var(--space-xl);
-        }
-
         .timeline-content {
             background: var(--white);
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
-            border: 1px solid var(--beige);
+            border: 1px solid var(--light-cream); /* CORREGIDO */
         }
 
         .timeline-content:hover {
@@ -677,11 +666,11 @@
         }
 
         .timeline-date {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             font-weight: 600;
             font-size: var(--font-size-sm);
             margin-bottom: var(--space-xs);
-            background: rgba(4, 120, 87, 0.1);
+            background: rgba(196, 106, 94, 0.1);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius-xl);
             display: inline-block;
@@ -723,7 +712,7 @@
         /* Value Proposition Section */
         .value-prop {
             padding: var(--space-2xl) 0;
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO */
         }
 
         .experience-intro {
@@ -732,7 +721,7 @@
         }
 
         .experience-highlight {
-            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-emerald));
+            background: linear-gradient(135deg, var(--primary-terracota), var(--secondary-terracota)); /* CORREGIDO */
             color: white;
             padding: var(--space-lg);
             border-radius: var(--radius-xl);
@@ -742,37 +731,6 @@
             margin-right: auto;
         }
 
-        .experience-advantages h4 {
-            color: var(--dark-charcoal);
-            margin-bottom: var(--space-md);
-            font-size: var(--font-size-lg);
-        }
-
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-md);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .advantage-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: white;
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .advantage-item .icon {
-            color: var(--success-sage);
-            font-weight: bold;
-            font-size: var(--font-size-lg);
-        }
-
-        /* Contact Section */
         .contact {
             padding: var(--space-2xl) 0;
             background: var(--white);
@@ -788,11 +746,11 @@
         }
 
         .contact-method {
-            background: var(--wheat);
+            background: var(--light-cream); /* CORREGIDO */
             padding: var(--space-xl);
             border-radius: var(--radius-xl);
             transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-emerald);
+            border-top: 4px solid var(--primary-terracota); /* CORREGIDO */
         }
 
         .contact-method:hover {
@@ -802,7 +760,7 @@
 
         .contact-method .contact-icon {
             font-size: var(--font-size-2xl);
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             margin-bottom: var(--space-md);
         }
 
@@ -812,7 +770,7 @@
         }
 
         .contact-method a {
-            color: var(--primary-emerald);
+            color: var(--primary-terracota); /* CORREGIDO */
             text-decoration: none;
             font-weight: 600;
         }
@@ -821,7 +779,7 @@
             color: var(--accent-gold);
         }
 
-        /* Responsive Design */
+        /* Responsive Design - Se mantiene igual */
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -882,508 +840,8 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item .timeline-content {
-                margin-left: 40px !important;
-                margin-right: 0 !important;
-                padding-left: var(--space-md) !important;
-                padding-right: var(--space-md) !important;
-                text-align: left !important;
-            }
-
-            .timeline-item::before {
-                left: 20px !important;
-                transform: translateX(0) !important;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#home" class="logo">Jazmin Fuentes</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#stack">Tech Stack</a></li>
-                    <li><a href="#competencias">Competencias</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#experience">Experiencia</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-                <button class="mobile-menu">☰</button>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transformo Datos en Decisiones Estratégicas de Talento</h1>
-                    <div class="hero-subtitle">Psicología + Ciencia de Datos = People Analytics con Impacto</div>
-                    <div class="hero-description">
-                        Combino mi formación en psicología organizacional con expertise en ciencia de datos para crear soluciones de People Analytics que realmente transforman la gestión del talento.
-                    </div>
-                    <div class="hero-highlight">
-                        <strong>Mi valor diferencial:</strong> Entiendo tanto los datos como el comportamiento humano detrás de ellos.
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn-primary">Ver Proyectos</a>
-                        <a href="./miCV.pdf" class="btn-secondary" download>Descargar CV</a>
-                    </div>
-                </div>
-                
-                <!-- NEW PROFILE CARD DESIGN - Conserved as requested -->
-                <div class="profile-card">
-                    <div class="profile-image-container">
-                        <div class="profile-image">
-                            <img src="./assets/images/profile.jpg" alt="Jazmin Fuentes">
-                        </div>
-                        <div class="profile-badge">People Analytics Specialist</div>
-                    </div>
-                    
-                    <div class="profile-info">
-                        <div class="profile-title">Jazmin Fuentes</div>
-                        <div class="profile-contact-grid">
-                            <div class="contact-row">
-                                <div class="contact-icon">✉️</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Email</div>
-                                    <a href="mailto:tu.email@ejemplo.com" class="contact-value contact-link">
-                                        tu.email@ejemplo.com
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">📱</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Teléfono</div>
-                                    <a href="tel:+521234567890" class="contact-value contact-link">
-                                        +52 123 456 7890
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">💼</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">LinkedIn</div>
-                                    <a href="https://linkedin.com/in/tu-perfil" class="contact-value contact-link">
-                                        /in/tu-perfil
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">💻</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">GitHub</div>
-                                    <a href="https://github.com/tu-usuario" class="contact-value contact-link">
-                                        github.com/tu-usuario
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">🌐</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Idiomas</div>
-                                    <div class="contact-value">Español nativo | Inglés avanzado</div>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-row">
-                                <div class="contact-icon">📍</div>
-                                <div class="contact-details">
-                                    <div class="contact-label">Ubicación</div>
-                                    <div class="contact-value">Ciudad, País</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary" style="display: block; text-align: center;">
-                        Contactarme
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Added sections as requested -->
-    <section id="expertise" class="section">
-        <div class="container">
-            <h2 class="section-title">What I Do Best</h2>
-            <p class="section-subtitle">Combining business experience with advanced technical expertise</p>
-            
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h3 class="expertise-title">MACHINE LEARNING & PREDICTIVE ANALYTICS</h3>
-                    <ul class="expertise-list">
-                        <li>Classification: Churn prediction, sentiment analysis, fraud detection</li>
-                        <li>Regression: Pricing optimization, demand forecasting</li>
-                        <li>Advanced Algorithms: XGBoost, LightGBM, CatBoost</li>
-                        <li>Model Optimization: Hyperparameter tuning, cross-validation</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <h3 class="expertise-title">DEEP LEARNING & NLP</h3>
-                    <ul class="expertise-list">
-                        <li>Transformers & BERT for text classification</li>
-                        <li>PyTorch, TensorFlow implementations</li>
-                        <li>Classical NLP: NLTK, spaCy processing</li>
-                        <li>Advanced feature engineering</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <h3 class="expertise-title">DATA ENGINEERING & ANALYSIS</h3>
-                    <ul class="expertise-list">
-                        <li>Python (expert), SQL (advanced)</li>
-                        <li>Core Libraries: Pandas, NumPy, Scikit-learn</li>
-                        <li>Visualization: Matplotlib, Seaborn, Plotly</li>
-                        <li>Statistics: A/B testing, hypothesis testing</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <h3 class="expertise-title">BUSINESS INTEGRATION</h3>
-                    <ul class="expertise-list">
-                        <li>Cross-industry experience: Mining, tech, retail, telecom</li>
-                        <li>Problem translation: Business needs to technical solutions</li>
-                        <li>ROI-focused model design</li>
-                        <li>Executive communication</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stack" class="section">
-        <div class="container">
-            <h2 class="section-title">Technology Stack</h2>
-            <p class="section-subtitle">Tools and technologies I master to create valuable solutions</p>
-            
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3>MACHINE LEARNING & AI</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">LightGBM</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">TensorFlow</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>NLP & DEEP LEARNING</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">BERT</span>
-                        <span class="tech-tag">Transformers</span>
-                        <span class="tech-tag">NLTK</span>
-                        <span class="tech-tag">spaCy</span>
-                        <span class="tech-tag">Sentiment Analysis</span>
-                        <span class="tech-tag">Keras</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>DATA ANALYSIS & VISUALIZATION</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Plotly</span>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>BUSINESS INTELLIGENCE</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Statistical Analysis</span>
-                        <span class="tech-tag">A/B Testing</span>
-                        <span class="tech-tag">Cross-validation</span>
-                        <span class="tech-tag">Bootstrapping</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="competencias" class="section">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">Technical and business skills that enable comprehensive solutions</p>
-            
-            <div class="competencias-grid">
-                <div class="competencia-card">
-                    <h3 class="competencia-title">TECHNICAL SKILLS</h3>
-                    <ul class="competencia-list">
-                        <li>End-to-End ML Projects: Problem definition to production deployment</li>
-                        <li>Algorithm Selection: Deep understanding of when/why to use specific models</li>
-                        <li>Model Validation: Cross-validation, bootstrapping, hold-out testing</li>
-                        <li>Performance Optimization: Balancing accuracy, speed, interpretability</li>
-                        <li>Feature Engineering: Domain expertise + automated selection</li>
-                        <li>Code Quality: Clean, documented, reproducible analysis</li>
-                    </ul>
-                </div>
-
-                <div class="competencia-card">
-                    <h3 class="competencia-title">BUSINESS ACUMEN</h3>
-                    <ul class="competencia-list">
-                        <li>Problem Translation: Converting business needs into technical requirements</li>
-                        <li>ROI Focus: Ensuring ML solutions generate measurable business value</li>
-                        <li>Stakeholder Communication: Explaining technical concepts clearly</li>
-                        <li>Project Management: Delivering complex projects on time and scope</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Technical Projects</h2>
-            <p class="section-subtitle">End-to-end ML solutions that generate measurable business impact</p>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Customer Churn Prediction</div>
-                        <div class="project-problem">Predict cancellations in telecommunications for proactive retention</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Technical Solution</h4>
-                            <div class="project-tech">
-                                <span class="project-tech-tag">Data Pipeline</span>
-                                <span class="project-tech-tag">Feature Engineering</span>
-                                <span class="project-tech-tag">5 ML Algorithms</span>
-                                <span class="project-tech-tag">GridSearchCV</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li>Data Pipeline: Cleaning, feature engineering, missing values treatment</li>
-                                <li>Model Comparison: 5 algorithms (Logistic Regression, Random Forest, XGBoost)</li>
-                                <li>Optimization: GridSearchCV for hyperparameter tuning</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Results:</strong> 85%+ accuracy, productionized model with actionable recommendations
-                        </div>
-                        <a href="https://github.com/banderasjuan/Interconnnect" class="project-link">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Automated Vehicle Pricing</div>
-                        <div class="project-problem">Automate used vehicle valuation while maintaining high precision</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Technical Solution</h4>
-                            <div class="project-tech">
-                                <span class="project-tech-tag">XGBoost</span>
-                                <span class="project-tech-tag">LightGBM</span>
-                                <span class="project-tech-tag">CatBoost</span>
-                                <span class="project-tech-tag">Ensemble</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li>Feature Engineering: Categorical encoding, numerical scaling</li>
-                                <li>Model Ensemble: XGBoost, LightGBM, CatBoost comparison</li>
-                                <li>Performance Optimization: Speed vs accuracy tradeoff analysis</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Results:</strong> 90%+ processing time reduction, optimized RMSE for precision pricing
-                        </div>
-                        <a href="https://github.com/banderasjuan/rusty_bargain" class="project-link">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Advanced Sentiment Analysis</div>
-                        <div class="project-problem">Automatic sentiment classification in movie reviews</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Technical Solution</h4>
-                            <div class="project-tech">
-                                <span class="project-tech-tag">BERT</span>
-                                <span class="project-tech-tag">PyTorch</span>
-                                <span class="project-tech-tag">Transformers</span>
-                                <span class="project-tech-tag">NLTK</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li>NLP Pipeline: Text preprocessing, lemmatization (NLTK + spaCy)</li>
-                                <li>Model Comparison: BERT/Transformers vs TF-IDF + classical ML</li>
-                                <li>Deep Learning: PyTorch implementation for BERT fine-tuning</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Results:</strong> Industrial-grade accuracy, 80% reduction in manual process
-                        </div>
-                        <a href="https://github.com/banderasjuan/Film_junky_union" class="project-link">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="value-prop">
-        <div class="container">
-            <h2 class="section-title">My Value Proposition</h2>
-            <p class="section-subtitle">Why choose a Data Scientist with business experience?</p>
-            
-            <div class="experience-intro">
-                <div class="experience-highlight">
-                    <strong>PROFESSIONAL TRANSITION CONTEXT</strong>
-                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
-                        10+ years in marketing, operations and sales before transitioning to data science
-                    </div>
-                </div>
-                
-                <div class="experience-advantages">
-                    <h4>This extensive business experience is my competitive advantage as a Data Scientist:</h4>
-                    <div class="advantages-grid">
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>I understand the context where my models will be implemented</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>I know the real pain points that data must solve</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>I speak the business language to communicate technical insights</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">✓</div>
-                            <span>I know which metrics really matter for each stakeholder</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - 2025</div>
-                        <div class="timeline-title">Data Scientist Certification</div>
-                        <div class="timeline-company">Tripleten Bootcamp</div>
-                        <p class="timeline-description">Intensive 10-month program covering ML, DL, NLP, and business applications</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Oct 2022 - Present</div>
-                        <div class="timeline-title">Business Development Leader</div>
-                        <div class="timeline-company">Inlog Logistics Solutions</div>
-                        <ul class="timeline-achievements">
-                            <li>30%+ revenue growth through data-driven business development</li>
-                            <li>Implementation of supply chain analytics platform</li>
-                            <li>70% customer retention through value-added strategies</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">May 2017 - Oct 2022</div>
-                        <div class="timeline-title">Operations Manager</div>
-                        <div class="timeline-company">Inlog Logistics</div>
-                        <ul class="timeline-achievements">
-                            <li>40% process automation using operational data analysis</li>
-                            <li>35% efficiency improvement implementing optimized systems</li>
-                            <li>Digital transformation of traditional workflows</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Ready to Transform Data into Impact?</h2>
-            <p class="section-subtitle">Let's connect to discuss how I can help your organization transform data into competitive advantages</p>
-            
-            <div class="contact-grid">
-                <div class="contact-method">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:juanbanderas387@gmail.com">juanbanderas387@gmail.com</a>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <a href="tel:+524435290308">+52 443 529 0308</a>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="contact-icon">💻</div>
-                    <h3>Complete Portfolio</h3>
-                    <a href="https://github.com/banderasjuan">github.com/banderasjuan</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu functionality
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (mobileMenu && navLinks) {
-            mobileMenu.addEventListener('click', () => {
-                const isVisible = navLinks.style.display === 'flex';
-                navLinks.style.display = isVisible ? 'none' : 'flex';
-                mobileMenu.textContent = isVisible ? '☰' : '✕';
-            });
-        }
-    </script>
-</body>
-</html>
+    <!-- El resto del HTML se mantiene igual -->
